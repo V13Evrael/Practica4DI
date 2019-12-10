@@ -20,7 +20,6 @@ public class VistaPrincipal extends JFrame {
 	private JMenuItem mnItConArt;
 	private JMenuItem mnItAltaTick;
 	private JMenuItem mnItConTick;
-	private JMenuItem mnItSalir;
 
 	public VistaPrincipal() {
 		setTitle("Men\u00FA Principal");
@@ -54,11 +53,6 @@ public class VistaPrincipal extends JFrame {
 		mnItConTick = new JMenuItem("Consulta Ticket");
 		mnTickets.add(mnItConTick);
 		
-		JMenu mnOpciones = new JMenu("Opciones");
-		menuBar.add(mnOpciones);
-		
-		mnItSalir = new JMenuItem("Salir");
-		mnOpciones.add(mnItSalir);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -87,9 +81,5 @@ public class VistaPrincipal extends JFrame {
 
 	public JMenuItem getMnItConTick() {
 		return mnItConTick;
-	}
-
-	public JMenuItem getMnItSalir() {
-		return mnItSalir;
 	}
 }

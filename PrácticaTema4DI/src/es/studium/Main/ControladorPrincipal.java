@@ -31,8 +31,6 @@ public class ControladorPrincipal  implements ActionListener {
 		vp.getMnItAltaTick().addActionListener(this);
 		vp.getMnItConTick().addActionListener(this);
 		
-		//Se añaden listeners a los menú item de Opciones
-		vp.getMnItSalir().addActionListener(this);
 	}
 
 	@Override
@@ -67,12 +65,5 @@ public class ControladorPrincipal  implements ActionListener {
 			
 			new Controlador2ConsulTicket();
 		}
-		
-		if (e.getSource().equals(vp.getMnItSalir())) {
-			
-			System.exit(0);
-		}
-		
-	}
-	
+	}	
 }
