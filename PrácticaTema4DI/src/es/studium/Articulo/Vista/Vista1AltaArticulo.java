@@ -26,6 +26,7 @@ public class Vista1AltaArticulo extends JFrame {
 	private JButton btnAltaArtSalir;
 	private JButton btnLimpiar;
 	private JButton btnAltaArt;
+	private JTextArea txtADescArt;
 
 	public Vista1AltaArticulo() {
 		setTitle("Alta Art\u00EDculo");
@@ -83,7 +84,7 @@ public class Vista1AltaArticulo extends JFrame {
 		JLabel lblDescArt = new JLabel("Descripci\u00F3n:");
 		pnlDescArt.add(lblDescArt);
 		
-		JTextArea txtADescArt = new JTextArea();
+		txtADescArt = new JTextArea();
 		txtADescArt.setBorder(new LineBorder(Color.LIGHT_GRAY));
 		txtADescArt.setRows(5);
 		txtADescArt.setColumns(20);
@@ -111,6 +112,10 @@ public class Vista1AltaArticulo extends JFrame {
 		
 		btnAltaArtSalir = new JButton("Salir");
 		pnlSur2.add(btnAltaArtSalir);
+	}
+
+	public JTextArea getTxtADescArt() {
+		return txtADescArt;
 	}
 
 	public JTextField getTxtFNombreArt() {
