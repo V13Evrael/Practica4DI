@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
@@ -92,15 +93,13 @@ public class UtilidadesDB {
 	}
 
 	// Método para ejecutar un CUD de CRUD.
-	public static void executeIDA(String sentencia, Connection c) {
+	public static void executeIDA(String sentencia, Connection c) throws SQLException {
 		Statement statement = null;
 		// Preparar el statement
-		try {
-			statement = c.createStatement();
-			statement.executeUpdate(sentencia);
-		} catch (SQLException e) {
-			System.out.println("Error en la sentencia SQL");
-		}
+
+		statement = c.createStatement();
+		statement.executeUpdate(sentencia);
+
 		disconnectGestion(c);
 	}
 
@@ -169,11 +168,27 @@ public class UtilidadesDB {
 		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
+	// Para hacerlo más sencillo La sentencia debe devolver un solo String con los
+	// datos colocados de la manera adecuada.
+	public static void complexFillJList(String sentencia, DefaultListModel<String> lista) {
+
+		Connection c;
+
+		try {
+			c = connectDataBase();
+			ResultSet rs = executeSelect(sentencia, c);
+			while (rs.next()) {
+				lista.addElement(rs.getString(1));
+			}
+			c.close();
+		} catch (Exception e) {
+		}
+	}
 }

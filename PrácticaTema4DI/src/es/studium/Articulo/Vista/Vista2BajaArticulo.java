@@ -8,7 +8,6 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -22,6 +21,7 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.ListSelectionModel;
 
 public class Vista2BajaArticulo extends JFrame {
 
@@ -33,8 +33,10 @@ public class Vista2BajaArticulo extends JFrame {
 	private JButton btnBajaArtSalir;
 	private JButton btnBajaArt;
 	private JButton btnFiltID;
-	private JButton btnFiltrar;
+	private JButton btnFiltNom;
 	private JButton btnResetFilt;
+	private JList<String> lstArt;
+	private JCheckBox chBoxSeguro;
 
 	public Vista2BajaArticulo() {
 		setTitle("Baja Art\u00EDculo");
@@ -54,20 +56,9 @@ public class Vista2BajaArticulo extends JFrame {
 		JPanel pnlOeste1 = new JPanel();
 		pnlOeste.add(pnlOeste1);
 		
-		JList<String> lstArt = new JList<String>();
+		lstArt = new JList<String>();
+		lstArt.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		lstArt.setPreferredSize(new Dimension(220, 100));
-		lstArt.setModel(new DefaultListModel<String>() {
-
-			private static final long serialVersionUID = 1L;
-			
-			String[] values = new String[] {"Art\u00EDculo de Prueba 1", "Art\u00EDculo de Prueba 2", "Art\u00EDculo de Prueba 3", "Art\u00EDculo de Prueba 4"};
-			public int getSize() {
-				return values.length;
-			}
-			public String getElementAt(int index) {
-				return values[index];
-			}
-		});
 		
 		JScrollPane scrollPane = new JScrollPane(lstArt);
 		scrollPane.setBorder(null);
@@ -103,9 +94,9 @@ public class Vista2BajaArticulo extends JFrame {
 		pnlOeste2.add(txtFiltNom);
 		txtFiltNom.setColumns(10);
 		
-		btnFiltrar = new JButton("Filtrar");
-		btnFiltrar.setBounds(145, 36, 80, 23);
-		pnlOeste2.add(btnFiltrar);
+		btnFiltNom = new JButton("Filtrar");
+		btnFiltNom.setBounds(145, 36, 80, 23);
+		pnlOeste2.add(btnFiltNom);
 		
 		btnResetFilt = new JButton("Reiniciar Filtro");
 		btnResetFilt.setBounds(42, 84, 128, 23);
@@ -134,12 +125,13 @@ public class Vista2BajaArticulo extends JFrame {
 		tblDatoArtBaj = new JTable();
 		tblDatoArtBaj.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"1", "NombreArticulo1", "PrecioArticulo1", "StockArt\u00EDculo1", "Descripci\u00F3nArt\u00EDculo1"},
+				{"", "", "", "", ""},
 			},
 			new String[] {
 				"ID", "Nombre", "Precio", "Stock", "Descripci\u00F3n"
 			}
 		));
+		
 		tblDatoArtBaj.getColumnModel().getColumn(0).setPreferredWidth(49);
 		tblDatoArtBaj.getColumnModel().getColumn(1).setPreferredWidth(98);
 		tblDatoArtBaj.getColumnModel().getColumn(2).setPreferredWidth(90);
@@ -154,7 +146,7 @@ public class Vista2BajaArticulo extends JFrame {
 		JPanel panel_1 = new JPanel();
 		pnlEste1Norte.add(panel_1);
 		
-		JCheckBox chBoxSeguro = new JCheckBox("Marque si est\u00E1 seguro de que desea dar de baja el art\u00EDculo");
+		chBoxSeguro = new JCheckBox("Marque si est\u00E1 seguro de que desea dar de baja el art\u00EDculo");
 		panel_1.add(chBoxSeguro);
 		
 		JPanel pnlEste1Center = new JPanel();
@@ -169,6 +161,10 @@ public class Vista2BajaArticulo extends JFrame {
 		btnBajaArtSalir.setBounds(200, 75, 117, 23);
 		pnlEste1Center.add(btnBajaArtSalir);
 		
+	}
+
+	public JList<String> getLstArt() {
+		return lstArt;
 	}
 
 	public JTextField getTxtFiltID() {
@@ -195,11 +191,15 @@ public class Vista2BajaArticulo extends JFrame {
 		return btnFiltID;
 	}
 
-	public JButton getBtnFiltrar() {
-		return btnFiltrar;
+	public JButton getBtnFiltNom() {
+		return btnFiltNom;
 	}
 
 	public JButton getBtnResetFilt() {
 		return btnResetFilt;
+	}
+	
+	public JCheckBox getChBoxSeguro() {
+		return chBoxSeguro;
 	}
 }

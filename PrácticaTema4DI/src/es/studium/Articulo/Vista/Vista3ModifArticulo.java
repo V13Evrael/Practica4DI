@@ -28,7 +28,7 @@ public class Vista3ModifArticulo extends JFrame {
 	private JTextField txtFiltNom;
 	private JTextField txtFiltID;
 	private JTextField txtFiltPrecio;
-	private JTextField txtFiltrarPorStock;
+	private JTextField txtFiltStock;
 	private JTextField txtFNombreArt;
 	private JTextField txtFPrecioArt;
 	private JTextField txtFStockArt;
@@ -39,11 +39,14 @@ public class Vista3ModifArticulo extends JFrame {
 	private JButton btnFiltStock;
 	private JButton btnModifArt;
 	private JButton btnModifSalir;
+	private JList<String> lstArt;
+	private JButton btnActivCampos;
+	private JTextArea txtADescArt;
 
 	public Vista3ModifArticulo() {
 		setTitle("Modificaci\u00F3n Art\u00EDculo");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 580, 350);
+		setBounds(100, 100, 600, 347);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -57,20 +60,9 @@ public class Vista3ModifArticulo extends JFrame {
 		JPanel pnlOeste1 = new JPanel();
 		pnlOeste.add(pnlOeste1);
 		
-		JList<String> lstArt = new JList<String>();
+		lstArt = new JList<String>();
 		lstArt.setPreferredSize(new Dimension(220, 100));
-		lstArt.setModel(new DefaultListModel<String>() {
-
-			private static final long serialVersionUID = 1L;
-			
-			String[] values = new String[] {"Art\u00EDculo de Prueba 1", "Art\u00EDculo de Prueba 2", "Art\u00EDculo de Prueba 3", "Art\u00EDculo de Prueba 4"};
-			public int getSize() {
-				return values.length;
-			}
-			public String getElementAt(int index) {
-				return values[index];
-			}
-		});
+		lstArt.setModel(new DefaultListModel<String>());
 		
 		JScrollPane scrollPane = new JScrollPane(lstArt);
 		scrollPane.setBorder(null);
@@ -126,13 +118,13 @@ public class Vista3ModifArticulo extends JFrame {
 		btnFiltPrecio.setBounds(145, 63, 80, 23);
 		pnlOeste2.add(btnFiltPrecio);
 		
-		txtFiltrarPorStock = new JTextField();
-		txtFiltrarPorStock.setFont(new Font("Tahoma", Font.ITALIC, 11));
-		txtFiltrarPorStock.setForeground(Color.LIGHT_GRAY);
-		txtFiltrarPorStock.setText("Filtrar por stock");
-		txtFiltrarPorStock.setBounds(7, 93, 135, 20);
-		pnlOeste2.add(txtFiltrarPorStock);
-		txtFiltrarPorStock.setColumns(10);
+		txtFiltStock = new JTextField();
+		txtFiltStock.setFont(new Font("Tahoma", Font.ITALIC, 11));
+		txtFiltStock.setForeground(Color.LIGHT_GRAY);
+		txtFiltStock.setText("Filtrar por stock");
+		txtFiltStock.setBounds(7, 93, 135, 20);
+		pnlOeste2.add(txtFiltStock);
+		txtFiltStock.setColumns(10);
 		
 		btnFiltStock = new JButton("Filtrar");
 		btnFiltStock.setBounds(145, 92, 80, 23);
@@ -153,6 +145,7 @@ public class Vista3ModifArticulo extends JFrame {
 		pnlNombreArt.add(lblNombreArt);
 		
 		txtFNombreArt = new JTextField();
+		txtFNombreArt.setEditable(false);
 		txtFNombreArt.setBorder(new LineBorder(Color.LIGHT_GRAY));
 		pnlNombreArt.add(txtFNombreArt);
 		txtFNombreArt.setColumns(20);
@@ -164,6 +157,7 @@ public class Vista3ModifArticulo extends JFrame {
 		pnlPrecioArt.add(lblPrecioArt);
 		
 		txtFPrecioArt = new JTextField();
+		txtFPrecioArt.setEditable(false);
 		txtFPrecioArt.setBorder(new LineBorder(Color.LIGHT_GRAY));
 		pnlPrecioArt.add(txtFPrecioArt);
 		txtFPrecioArt.setColumns(20);
@@ -175,6 +169,7 @@ public class Vista3ModifArticulo extends JFrame {
 		pnlStockArt.add(lblStockArt);
 		
 		txtFStockArt = new JTextField();
+		txtFStockArt.setEditable(false);
 		txtFStockArt.setBorder(new LineBorder(Color.LIGHT_GRAY));
 		pnlStockArt.add(txtFStockArt);
 		txtFStockArt.setColumns(20);
@@ -189,7 +184,9 @@ public class Vista3ModifArticulo extends JFrame {
 		JLabel lblDescArt = new JLabel("Descripci\u00F3n:");
 		pnlDescArt.add(lblDescArt);
 		
-		JTextArea txtADescArt = new JTextArea();
+		txtADescArt = new JTextArea();
+		txtADescArt.setEditable(false);
+		txtADescArt.setBackground(new Color(240, 240, 240, 240));
 		txtADescArt.setBorder(new LineBorder(Color.LIGHT_GRAY));
 		txtADescArt.setRows(5);
 		txtADescArt.setColumns(20);
@@ -209,7 +206,7 @@ public class Vista3ModifArticulo extends JFrame {
 		});
 		pnlSur1.add(btnModifArt);
 		
-		JButton btnActivCampos = new JButton(" Activar Campos ");
+		btnActivCampos = new JButton(" Activar Campos ");
 		pnlSur1.add(btnActivCampos);
 		
 		JPanel pnlSur2 = new JPanel();
@@ -217,6 +214,18 @@ public class Vista3ModifArticulo extends JFrame {
 		
 		btnModifSalir = new JButton("Salir");
 		pnlSur2.add(btnModifSalir);
+	}
+
+	public JTextArea getTxtADescArt() {
+		return txtADescArt;
+	}
+
+	public JList<String> getLstArt() {
+		return lstArt;
+	}
+
+	public JButton getBtnActivCampos() {
+		return btnActivCampos;
 	}
 
 	public JTextField getTxtFiltNom() {
@@ -231,8 +240,8 @@ public class Vista3ModifArticulo extends JFrame {
 		return txtFiltPrecio;
 	}
 
-	public JTextField getTxtFiltrarPorStock() {
-		return txtFiltrarPorStock;
+	public JTextField getTxtFiltStock() {
+		return txtFiltStock;
 	}
 
 	public JTextField getTxtFNombreArt() {
