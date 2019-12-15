@@ -102,6 +102,20 @@ public class UtilidadesDB {
 
 		disconnectGestion(c);
 	}
+	
+	public static void executeIDA(String sentencia, Connection c, boolean cerrarCon) throws SQLException {
+		
+		if (cerrarCon) {
+			executeIDA(sentencia, c);
+		}
+		else {
+			Statement statement = null;
+			// Preparar el statement
+
+			statement = c.createStatement();
+			statement.executeUpdate(sentencia);
+		}	
+	}
 
 	// Este método rellena un ComboBox utilizando una sentencia SQL guardada en un
 	// resultSet.

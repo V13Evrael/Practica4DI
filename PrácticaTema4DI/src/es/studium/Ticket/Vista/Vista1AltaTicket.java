@@ -23,6 +23,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
+import es.studium.Modelo.UtilidadesDB;
+
 public class Vista1AltaTicket extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -34,13 +36,14 @@ public class Vista1AltaTicket extends JFrame {
 	private JTextField txtFTotal;
 	private JList<String> lstArt;
 	private JButton btnFiltID;
-	private JButton btnFiltrar;
+	private JButton btnFiltNom;
 	private JButton btnAgregarACompra;
 	private JButton btnResetFilt;
 	private JButton btnFinalizarCompra;
+	private JButton btnEliminar;
 
 	public Vista1AltaTicket() {
-		setTitle("Alta TIcket");
+		setTitle("Alta Ticket");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 653, 324);
 		contentPane = new JPanel();
@@ -58,18 +61,7 @@ public class Vista1AltaTicket extends JFrame {
 		
 		lstArt = new JList<String>();
 		lstArt.setPreferredSize(new Dimension(220, 100));
-		lstArt.setModel(new DefaultListModel<String>() {
-
-			private static final long serialVersionUID = 1L;
-			
-			String[] values = new String[] {"Art\u00EDculo de Prueba 1", "Art\u00EDculo de Prueba 2", "Art\u00EDculo de Prueba 3", "Art\u00EDculo de Prueba 4"};
-			public int getSize() {
-				return values.length;
-			}
-			public String getElementAt(int index) {
-				return values[index];
-			}
-		});
+		lstArt.setModel(new DefaultListModel<String>());
 		
 		JScrollPane scrollPane = new JScrollPane(lstArt);
 		scrollPane.setBorder(null);
@@ -107,8 +99,8 @@ public class Vista1AltaTicket extends JFrame {
 		txtFiltNom.setFont(new Font("Tahoma", Font.ITALIC, 11));
 		txtFiltNom.setColumns(16);
 		
-		btnFiltrar = new JButton("Filtrar");
-		pnlFiltNom.add(btnFiltrar);
+		btnFiltNom = new JButton("Filtrar");
+		pnlFiltNom.add(btnFiltNom);
 		
 		JPanel pnlFiltCant = new JPanel();
 		pnlOeste2.add(pnlFiltCant);
@@ -138,7 +130,7 @@ public class Vista1AltaTicket extends JFrame {
 		pnlEste.add(pnlEste1);
 		pnlEste1.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblDatos = new JLabel("<HTML>Fecha: _____________<br><br></HTML>");
+		JLabel lblDatos = new JLabel("<HTML>Fecha: " + UtilidadesDB.formatoDateSQL(UtilidadesDB.takeDate()) + "<br><br></HTML>");
 		pnlEste1.add(lblDatos, BorderLayout.NORTH);
 		lblDatos.setHorizontalAlignment(SwingConstants.RIGHT);
 		
@@ -148,21 +140,7 @@ public class Vista1AltaTicket extends JFrame {
 		tblDatoArtBaj = new JTable();
 		tblDatoArtBaj.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		tblDatoArtBaj.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"1", "Art\u00EDculo 1", "2", "60\u20AC"},
-				{"2", "Art\u00EDculo 2", "1", "10\u20AC"},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-			},
+			null,
 			new String[] {
 				"ID", "Art\u00EDculo", "Cantidad", "Precio/Unidad"
 			}
@@ -194,12 +172,19 @@ public class Vista1AltaTicket extends JFrame {
 		JPanel panel_4 = new JPanel();
 		panel_2.add(panel_4, BorderLayout.SOUTH);
 		
+		btnEliminar = new JButton("Eliminar de la lista");
+		panel_4.add(btnEliminar);
+		
 		btnFinalizarCompra = new JButton("Finalizar Compra");
 		panel_4.add(btnFinalizarCompra);
 	}
 
 	public JTable getTblDatoArtBaj() {
 		return tblDatoArtBaj;
+	}
+
+	public JButton getBtnEliminar() {
+		return btnEliminar;
 	}
 
 	public JTextField getTxtFiltNom() {
@@ -226,8 +211,8 @@ public class Vista1AltaTicket extends JFrame {
 		return btnFiltID;
 	}
 
-	public JButton getBtnFiltrar() {
-		return btnFiltrar;
+	public JButton getBtnFiltNom() {
+		return btnFiltNom;
 	}
 
 	public JButton getBtnAgregarACompra() {
