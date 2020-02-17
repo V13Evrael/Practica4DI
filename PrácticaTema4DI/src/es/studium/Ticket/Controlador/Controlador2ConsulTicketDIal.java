@@ -16,10 +16,11 @@ public class Controlador2ConsulTicketDIal implements ActionListener {
 
 		v2ConTickDia = new Vista2ConsultaTicketDial(id, fecha, total);
 
-		String sentencia = "SELECT idArticulo, nombreArticulo, cantidadArticulo, precioArticulo, (cantidadArticulo*precioArticulo) AS 'Precio Total' FROM articulos, compras WHERE idArticulo = idArticuloFK AND idTicketFK = "
+		String sentencia = "SELECT idArticulo, nombreArticulo, cantidadArticulo, precioArticulo, (cantidadArticulo*precioArticulo) FROM articulos, compras WHERE idArticulo = idArticuloFK AND idTicketFK = "
 				+ id + ";";
 
 		UtilidadesDB.complexfillJTable(sentencia, 5, (DefaultTableModel) v2ConTickDia.getTable().getModel());
+		
 
 		v2ConTickDia.setVisible(true);
 
