@@ -6,10 +6,18 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/jmpla/Desktop/mysql-connector-java-5.1.46.jar">
+	<classpathentry kind="lib" path="D:/Jose/Descargas/mysql-connector-java-5.1.46.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/jmpla/Downloads/jasperreports-6.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jmpla/Downloads/itextpdf-5.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jmpla/Downloads/itext-pdfa-5.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jmpla/Downloads/groovy-all-2.4.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jmpla/Downloads/commons-beanutils-1.9.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jmpla/Downloads/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jmpla/Downloads/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/jmpla/Downloads/commons.collections-3.2.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

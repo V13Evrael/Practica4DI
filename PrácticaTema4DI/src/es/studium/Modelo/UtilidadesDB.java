@@ -1,5 +1,7 @@
 package es.studium.Modelo;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,10 +9,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
+
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class UtilidadesDB {
 
@@ -20,7 +31,7 @@ public class UtilidadesDB {
 		String driver = "com.mysql.jdbc.Driver";
 		String url = "jdbc:mysql://localhost:3306/di4db? autoReconnect=true&useSSL=false";
 		String loginBD = "root";
-		String passwordBD = "Studium2018;";
+		String passwordBD = "Studium2019;";
 
 		// Cargar el Driver
 		Class.forName(driver);
@@ -65,6 +76,13 @@ public class UtilidadesDB {
 		resultado = listaResultado[2] + "/" + listaResultado[1] + "/" + listaResultado[0];
 		return resultado;
 	}
+	
+	public static String formatoDateSQL(String s, String splitter) {
+		String resultado = s;
+		String[] listaResultado = resultado.split(splitter);
+		resultado = listaResultado[2] + splitter + listaResultado[1] + splitter + listaResultado[0];
+		return resultado;
+	}
 
 	// Método para cerrar una conexión.
 	public static void disconnectGestion(Connection c) {
@@ -102,19 +120,18 @@ public class UtilidadesDB {
 
 		disconnectGestion(c);
 	}
-	
+
 	public static void executeIDA(String sentencia, Connection c, boolean cerrarCon) throws SQLException {
-		
+
 		if (cerrarCon) {
 			executeIDA(sentencia, c);
-		}
-		else {
+		} else {
 			Statement statement = null;
 			// Preparar el statement
 
 			statement = c.createStatement();
 			statement.executeUpdate(sentencia);
-		}	
+		}
 	}
 
 	// Este método rellena un ComboBox utilizando una sentencia SQL guardada en un
@@ -189,6 +206,43 @@ public class UtilidadesDB {
 		}
 	}
 
+	public static void complexfillJTable(String sentencia, Integer columnas, DefaultTableModel tabla,
+			Integer columnaFecha) {
+
+		Connection c;
+
+		try {
+			c = connectDataBase();
+			ResultSet rs = executeSelect(sentencia, c);
+			String[] filas = new String[columnas];
+
+			while (rs.next()) {
+				for (int i = 0; i < columnas; i++) {
+					try {
+						if (columnaFecha != i) {
+							filas[i] = rs.getString(i + 1);
+						} else {
+							System.out.println(rs.getString(i+1));
+							filas[i] = UtilidadesDB.formatoDateSQL(rs.getString(i + 1), "-");
+						}
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				tabla.addRow(filas);
+			}
+
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	// Para hacerlo más sencillo La sentencia debe devolver un solo String con los
 	// datos colocados de la manera adecuada.
 	public static void complexFillJList(String sentencia, DefaultListModel<String> lista) {
@@ -203,6 +257,38 @@ public class UtilidadesDB {
 			}
 			c.close();
 		} catch (Exception e) {
+		}
+	}
+	
+	public static void generaInforme(String nombreInforme, HashMap<String, Object> parametros) {
+		try {
+			// Compilar el informe generando fichero jasper
+			JasperCompileManager.compileReportToFile(nombreInforme + ".jrxml");
+			System.out.println("Fichero" + nombreInforme + ".jasper generado CORRECTAMENTE!");
+			// Objeto para guardar parámetros necesarios para el informe
+			
+			// Cargar el informe compilado
+			JasperReport report = (JasperReport) JRLoader.loadObjectFromFile(nombreInforme + ".jasper");
+			// Conectar a la base de datos para sacar la información
+			Class.forName("com.mysql.jdbc.Driver");
+			String servidor = "jdbc:mysql://localhost:3306/di4db?useSSL=false";
+			String usuarioDB = "root";
+			String passwordDB = "Studium2019;";
+			Connection conexion = DriverManager.getConnection(servidor, usuarioDB, passwordDB);
+
+			// Completar el informe con los datos de la base de datos
+			JasperPrint print = JasperFillManager.fillReport(report, parametros, conexion);
+			// Mostrar el informe en JasperViewer
+			JasperViewer.viewReport(print, false);
+			// Para exportarlo a pdf
+			JasperExportManager.exportReportToPdfFile(print, nombreInforme + ".pdf");
+			// Abrir el fichero PDF generado
+			File path = new File(nombreInforme + ".pdf");
+			Desktop.getDesktop().open(path);
+
+		} catch (Exception exc) {
+			exc.printStackTrace();
+			// System.out.println("Error: " + exc.toString());
 		}
 	}
 }

@@ -1,7 +1,5 @@
 package es.studium.Main;
 
-import es.studium.Ticket.Vista.Vista2ConsultaTicketDial;
-
 public class Principal {
 
 	public static void main(String[] args) {

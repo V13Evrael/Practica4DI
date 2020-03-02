@@ -8,11 +8,11 @@ import javax.swing.table.DefaultTableModel;
 import es.studium.Modelo.UtilidadesDB;
 import es.studium.Ticket.Vista.Vista2ConsultaTicketDial;
 
-public class Controlador2ConsulTicketDIal implements ActionListener {
+public class Controlador2ConsulTicketDial implements ActionListener {
 
 	Vista2ConsultaTicketDial v2ConTickDia;
 
-	public Controlador2ConsulTicketDIal(String id, String fecha, String total) {
+	public Controlador2ConsulTicketDial(String id, String fecha, String total) {
 
 		v2ConTickDia = new Vista2ConsultaTicketDial(id, fecha, total);
 

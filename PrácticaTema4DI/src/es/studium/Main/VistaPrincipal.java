@@ -18,8 +18,10 @@ public class VistaPrincipal extends JFrame {
 	private JMenuItem mnItModArt;
 	private JMenuItem mnItBajaArt;
 	private JMenuItem mnItConArt;
+	private JMenuItem mnItInfArt;
 	private JMenuItem mnItAltaTick;
 	private JMenuItem mnItConTick;
+	private JMenuItem mnItInfTick;
 
 	public VistaPrincipal() {
 		setTitle("Men\u00FA Principal");
@@ -44,6 +46,9 @@ public class VistaPrincipal extends JFrame {
 		mnItConArt = new JMenuItem("Consulta Art\u00EDculos");
 		mnArticulos.add(mnItConArt);
 		
+		mnItInfArt = new JMenuItem("Generar Informe de Artículos");
+		mnArticulos.add(mnItInfArt);
+		
 		JMenu mnTickets = new JMenu("Tickets");
 		menuBar.add(mnTickets);
 		
@@ -52,6 +57,9 @@ public class VistaPrincipal extends JFrame {
 		
 		mnItConTick = new JMenuItem("Consulta Ticket");
 		mnTickets.add(mnItConTick);
+		
+		mnItInfTick = new JMenuItem("Generar Informe de Tickets");
+		mnTickets.add(mnItInfTick);
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -81,5 +89,13 @@ public class VistaPrincipal extends JFrame {
 
 	public JMenuItem getMnItConTick() {
 		return mnItConTick;
+	}
+	
+	public JMenuItem getMnItInfArt() {
+		return mnItInfArt;
+	}
+
+	public JMenuItem getMnItInfTick() {
+		return mnItInfTick;
 	}
 }
