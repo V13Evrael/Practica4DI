@@ -13,14 +13,34 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Vista2ConsultaTicketDial.
+ */
 public class Vista2ConsultaTicketDial extends JDialog {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The content panel. */
 	private final JPanel contentPanel = new JPanel();
+	
+	/** The table. */
 	private JTable table;
+	
+	/** The text field. */
 	private JTextField textField;
+	
+	/** The btn volver. */
 	private JButton btnVolver;
 
+	/**
+	 * Instantiates a new vista 2 consulta ticket dial.
+	 *
+	 * @param id the id
+	 * @param fecha the fecha
+	 * @param total the total
+	 */
 	public Vista2ConsultaTicketDial(String id, String fecha, String total) {
 		setBounds(100, 100, 550, 300);
 		getContentPane().setLayout(new BorderLayout());
@@ -71,10 +91,20 @@ public class Vista2ConsultaTicketDial extends JDialog {
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 	}
 
+	/**
+	 * Gets the btn volver.
+	 *
+	 * @return the btn volver
+	 */
 	public JButton getBtnVolver() {
 		return btnVolver;
 	}
 
+	/**
+	 * Gets the table.
+	 *
+	 * @return the table
+	 */
 	public JTable getTable() {
 		return table;
 	}

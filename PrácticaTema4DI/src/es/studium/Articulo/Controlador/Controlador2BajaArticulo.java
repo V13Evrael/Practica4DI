@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -16,13 +17,41 @@ import javax.swing.table.DefaultTableModel;
 import es.studium.Articulo.Vista.Vista2BajaArticulo;
 import es.studium.Modelo.UtilidadesDB;
 
+/**
+ * La clase Controlador2BajaArticulo.
+ * 
+ * <p>
+ * Esta clase controladora maneja y da funcionalidad a un objeto de la clase
+ * {@link Vista2BajaArticulo} y sus componentes.
+ * </p>
+ * 
+ * @author José Manuel Platero
+ */
 public class Controlador2BajaArticulo implements ActionListener, ListSelectionListener, MouseListener {
 
+	/**
+	 * El objeto {@link Vista2BajaArticulo v2BajArt} es un atributo del
+	 * Controlador2BajaArticulo mediante el cual podrá acceder a los elementos de la
+	 * vista.
+	 */
 	Vista2BajaArticulo v2BajArt;
+
+	/** Un boolean usado para mostrar el mensaje de error. */
 	boolean errorMsg = false;
+
+	/**
+	 * Un boolean usado para mostrar un mensaje de seguridad al realizar una baja.
+	 */
 	boolean seguroMsg = false;
+
+	/** Un boolean usado para mostrar una nueva Baja. */
 	boolean otraBajaMsg = false;
 
+	/**
+	 * Instancia un nuevo objeto Controlador2BajaArticulo, que a su vez instancia
+	 * una nueva {@link Vista2BajaArticulo}, la hace visible y le añade los
+	 * listeners correspondientes..
+	 */
 	public Controlador2BajaArticulo() {
 
 		v2BajArt = new Vista2BajaArticulo();
@@ -44,11 +73,19 @@ public class Controlador2BajaArticulo implements ActionListener, ListSelectionLi
 		v2BajArt.getBtnFiltID().addActionListener(this);
 		v2BajArt.getBtnFiltNom().addActionListener(this);
 		v2BajArt.getBtnResetFilt().addActionListener(this);
-		
+
 		v2BajArt.getTxtFiltID().addMouseListener(this);
 		v2BajArt.getTxtFiltNom().addMouseListener(this);
 	}
 
+	/**
+	 * El método actionPerformed de esta clase, que otorga la funcionalidad a los
+	 * diferentes elementos del objeto {@link #v2BajArt}.
+	 *
+	 * @param e El {@link ActionEvent} que indica la acción que tuvo lugar, usado
+	 *          para identificar el elemento de {@link #v2BajArt} que lanzó la
+	 *          acción.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -103,7 +140,7 @@ public class Controlador2BajaArticulo implements ActionListener, ListSelectionLi
 			v2BajArt.dispose();
 		}
 
-		//Cuando filtramos por ID
+		// Cuando filtramos por ID
 		if (e.getSource().equals(v2BajArt.getBtnFiltID())) {
 			if (!v2BajArt.getTxtFiltID().getText().equals("Filtrar por ID")) {
 				String sentencia = "SELECT concat(idArticulo,' - ', nombreArticulo) FROM articulos "
@@ -118,8 +155,8 @@ public class Controlador2BajaArticulo implements ActionListener, ListSelectionLi
 				}
 			}
 		}
-		
-		//Cuando filtramos por Nombre
+
+		// Cuando filtramos por Nombre
 		if (e.getSource().equals(v2BajArt.getBtnFiltNom())) {
 			if (!v2BajArt.getTxtFiltNom().getText().equals("Filtrar por Nombre")) {
 				String sentencia = "SELECT concat(idArticulo,' - ', nombreArticulo) FROM articulos "
@@ -134,23 +171,23 @@ public class Controlador2BajaArticulo implements ActionListener, ListSelectionLi
 				}
 			}
 		}
-		
+
 		if (e.getSource().equals(v2BajArt.getBtnResetFilt())) {
-			
+
 			String sentencia = "SELECT concat(idArticulo,' - ', nombreArticulo) FROM articulos;";
 			try {
-				
+
 				((DefaultListModel<String>) v2BajArt.getLstArt().getModel()).clear();
 				UtilidadesDB.complexFillJList(sentencia, (DefaultListModel<String>) v2BajArt.getLstArt().getModel());
-				
+
 				v2BajArt.getTxtFiltID().setFont(new Font("Tahoma", Font.ITALIC, 11));
 				v2BajArt.getTxtFiltID().setForeground(Color.LIGHT_GRAY);
 				v2BajArt.getTxtFiltID().setText("Filtrar por ID");
-				
+
 				v2BajArt.getTxtFiltNom().setFont(new Font("Tahoma", Font.ITALIC, 11));
 				v2BajArt.getTxtFiltNom().setForeground(Color.LIGHT_GRAY);
 				v2BajArt.getTxtFiltNom().setText("Filtrar por Nombre");
-				
+
 			} catch (Exception exc) {
 
 			}
@@ -158,6 +195,13 @@ public class Controlador2BajaArticulo implements ActionListener, ListSelectionLi
 
 	}
 
+	/**
+	 * El método valueChanged de esta clase, que otorgalos comportamientos necesarios al objeto {@link JList} que
+	 * devuelve el método {@link Vista2BajaArticulo#getLstArt() getListArt()
+	 * aplicado sobre {@link #v2BajArt}.
+	 *
+	 * @param e El {@link ListSelectionEvent} que indica la acción que tuvo lugar sobre la lista.
+	 */
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 
@@ -171,24 +215,34 @@ public class Controlador2BajaArticulo implements ActionListener, ListSelectionLi
 
 	}
 
+	/**
+	 * Mouse clicked.
+	 *
+	 * @param e el {@link MouseEvent}
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * Mouse pressed.
+	 *
+	 * @param e el {@link MouseEvent} usado para identificar qué elemento recibió el evento.
+	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
 
 		if (e.getSource().equals(v2BajArt.getTxtFiltID())) {
-			
+
 			v2BajArt.getTxtFiltID().setText("");
 			v2BajArt.getTxtFiltID().setFont(new Font(null));
 			v2BajArt.getTxtFiltID().setForeground(Color.BLACK);
 		}
-		
+
 		if (e.getSource().equals(v2BajArt.getTxtFiltNom())) {
-			
+
 			v2BajArt.getTxtFiltNom().setText("");
 			v2BajArt.getTxtFiltNom().setFont(new Font(null));
 			v2BajArt.getTxtFiltNom().setForeground(Color.BLACK);
@@ -196,18 +250,33 @@ public class Controlador2BajaArticulo implements ActionListener, ListSelectionLi
 
 	}
 
+	/**
+	 * Mouse released.
+	 *
+	 * @param e el {@link MouseEvent}
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * Mouse entered.
+	 *
+	 * @param e el {@link MouseEvent}
+	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * Mouse exited.
+	 *
+	 * @param e el {@link MouseEvent}
+	 */
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub

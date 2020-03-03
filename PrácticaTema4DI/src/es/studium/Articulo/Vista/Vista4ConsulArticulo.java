@@ -13,14 +13,30 @@ import es.studium.Modelo.UtilidadesDB;
 
 import javax.swing.JButton;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Vista4ConsulArticulo.
+ */
 public class Vista4ConsulArticulo extends JFrame {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The table. */
 	private JTable table;
+	
+	/** The pnl boton salir. */
 	private JPanel pnlBotonSalir;
+	
+	/** The btn salir. */
 	private JButton btnSalir;
 
+	/**
+	 * Instantiates a new vista 4 consul articulo.
+	 */
 	public Vista4ConsulArticulo() {
 		setTitle("Consulta Art\u00EDculos");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -57,10 +73,20 @@ public class Vista4ConsulArticulo extends JFrame {
 		pnlBotonSalir.add(btnSalir);
 	}
 
+	/**
+	 * Gets the table.
+	 *
+	 * @return the table
+	 */
 	public JTable getTable() {
 		return table;
 	}
 
+	/**
+	 * Gets the btn salir.
+	 *
+	 * @return the btn salir
+	 */
 	public JButton getBtnSalir() {
 		return btnSalir;
 	}

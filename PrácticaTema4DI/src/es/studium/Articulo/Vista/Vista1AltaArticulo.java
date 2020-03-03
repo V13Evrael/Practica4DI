@@ -16,18 +16,42 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Vista1AltaArticulo.
+ */
 public class Vista1AltaArticulo extends JFrame {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The txt F nombre art. */
 	private JTextField txtFNombreArt;
+	
+	/** The txt F precio art. */
 	private JTextField txtFPrecioArt;
+	
+	/** The txt F stock art. */
 	private JTextField txtFStockArt;
+	
+	/** The btn alta art salir. */
 	private JButton btnAltaArtSalir;
+	
+	/** The btn limpiar. */
 	private JButton btnLimpiar;
+	
+	/** The btn alta art. */
 	private JButton btnAltaArt;
+	
+	/** The txt A desc art. */
 	private JTextArea txtADescArt;
 
+	/**
+	 * Instantiates a new vista 1 alta articulo.
+	 */
 	public Vista1AltaArticulo() {
 		setTitle("Alta Art\u00EDculo");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -114,30 +138,65 @@ public class Vista1AltaArticulo extends JFrame {
 		pnlSur2.add(btnAltaArtSalir);
 	}
 
+	/**
+	 * Gets the txt A desc art.
+	 *
+	 * @return the txt A desc art
+	 */
 	public JTextArea getTxtADescArt() {
 		return txtADescArt;
 	}
 
+	/**
+	 * Gets the txt F nombre art.
+	 *
+	 * @return the txt F nombre art
+	 */
 	public JTextField getTxtFNombreArt() {
 		return txtFNombreArt;
 	}
 
+	/**
+	 * Gets the txt F precio art.
+	 *
+	 * @return the txt F precio art
+	 */
 	public JTextField getTxtFPrecioArt() {
 		return txtFPrecioArt;
 	}
 
+	/**
+	 * Gets the txt F stock art.
+	 *
+	 * @return the txt F stock art
+	 */
 	public JTextField getTxtFStockArt() {
 		return txtFStockArt;
 	}
 
+	/**
+	 * Gets the btn alta art salir.
+	 *
+	 * @return the btn alta art salir
+	 */
 	public JButton getBtnAltaArtSalir() {
 		return btnAltaArtSalir;
 	}
 
+	/**
+	 * Gets the btn limpiar.
+	 *
+	 * @return the btn limpiar
+	 */
 	public JButton getBtnLimpiar() {
 		return btnLimpiar;
 	}
 
+	/**
+	 * Gets the btn alta art.
+	 *
+	 * @return the btn alta art
+	 */
 	public JButton getBtnAltaArt() {
 		return btnAltaArt;
 	}

@@ -23,15 +23,26 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UtilidadesDB.
+ */
 public class UtilidadesDB {
 
+	/**
+	 * Connect data base.
+	 *
+	 * @return the connection
+	 * @throws ClassNotFoundException the class not found exception
+	 * @throws SQLException the SQL exception
+	 */
 	public static Connection connectDataBase() throws ClassNotFoundException, SQLException {
 
 		Connection resultado = null;
 		String driver = "com.mysql.jdbc.Driver";
 		String url = "jdbc:mysql://localhost:3306/di4db? autoReconnect=true&useSSL=false";
 		String loginBD = "root";
-		String passwordBD = "Studium2019;";
+		String passwordBD = "Studium2018;";
 
 		// Cargar el Driver
 		Class.forName(driver);
@@ -43,6 +54,14 @@ public class UtilidadesDB {
 	}
 
 	// Este método genera un Select a partir de los elementos básicos si se quiere
+	/**
+	 * Generate select.
+	 *
+	 * @param elements the elements
+	 * @param fromTable the from table
+	 * @param where the where
+	 * @return the string
+	 */
 	// ordenar, debe introducirse a continuación del Where.
 	public static String generateSelect(String elements, String fromTable, String where) {
 
@@ -50,6 +69,11 @@ public class UtilidadesDB {
 		return resultado;
 	}
 
+	/**
+	 * Take date.
+	 *
+	 * @return the string
+	 */
 	// Método para recoger la fecha actual.
 	public static String takeDate() {
 		Calendar calendario = new GregorianCalendar();
@@ -70,6 +94,12 @@ public class UtilidadesDB {
 		return resultado;
 	}
 
+	/**
+	 * Formato date SQL.
+	 *
+	 * @param s the s
+	 * @return the string
+	 */
 	public static String formatoDateSQL(String s) {
 		String resultado = s;
 		String[] listaResultado = resultado.split("/");
@@ -77,6 +107,13 @@ public class UtilidadesDB {
 		return resultado;
 	}
 	
+	/**
+	 * Formato date SQL.
+	 *
+	 * @param s the s
+	 * @param splitter the splitter
+	 * @return the string
+	 */
 	public static String formatoDateSQL(String s, String splitter) {
 		String resultado = s;
 		String[] listaResultado = resultado.split(splitter);
@@ -84,6 +121,11 @@ public class UtilidadesDB {
 		return resultado;
 	}
 
+	/**
+	 * Disconnect gestion.
+	 *
+	 * @param c the c
+	 */
 	// Método para cerrar una conexión.
 	public static void disconnectGestion(Connection c) {
 		try {
@@ -96,6 +138,13 @@ public class UtilidadesDB {
 		}
 	}
 
+	/**
+	 * Execute select.
+	 *
+	 * @param sentencia the sentencia
+	 * @param c the c
+	 * @return the result set
+	 */
 	// Método para ejecutar una sentencia Select.
 	public static ResultSet executeSelect(String sentencia, Connection c) {
 		Statement statement = null;
@@ -110,6 +159,13 @@ public class UtilidadesDB {
 		return rs;
 	}
 
+	/**
+	 * Execute IDA.
+	 *
+	 * @param sentencia the sentencia
+	 * @param c the c
+	 * @throws SQLException the SQL exception
+	 */
 	// Método para ejecutar un CUD de CRUD.
 	public static void executeIDA(String sentencia, Connection c) throws SQLException {
 		Statement statement = null;
@@ -121,6 +177,14 @@ public class UtilidadesDB {
 		disconnectGestion(c);
 	}
 
+	/**
+	 * Execute IDA.
+	 *
+	 * @param sentencia the sentencia
+	 * @param c the c
+	 * @param cerrarCon the cerrar con
+	 * @throws SQLException the SQL exception
+	 */
 	public static void executeIDA(String sentencia, Connection c, boolean cerrarCon) throws SQLException {
 
 		if (cerrarCon) {
@@ -137,6 +201,13 @@ public class UtilidadesDB {
 	// Este método rellena un ComboBox utilizando una sentencia SQL guardada en un
 	// resultSet.
 	// En la lista de Integers se indican qué elementos de la sentencia se van a
+	/**
+	 * Fill combo box RS.
+	 *
+	 * @param rs the rs
+	 * @param c the c
+	 * @param lista the lista
+	 */
 	// coger y en qué orden se colocarán.
 	public static void fillComboBoxRS(ResultSet rs, JComboBox<String> c, Integer[] lista) {
 		try {
@@ -158,6 +229,13 @@ public class UtilidadesDB {
 	}
 
 	// Este método une varios de los métodos anteriores para hacerlo todo en una
+	/**
+	 * Complex fill CB.
+	 *
+	 * @param sentencia the sentencia
+	 * @param cmb the cmb
+	 * @param lista the lista
+	 */
 	// sola línea de código.
 	public static void complexFillCB(String sentencia, JComboBox<String> cmb, Integer[] lista) {
 		Connection c;
@@ -176,6 +254,13 @@ public class UtilidadesDB {
 
 	}
 
+	/**
+	 * Complexfill J table.
+	 *
+	 * @param sentencia the sentencia
+	 * @param columnas the columnas
+	 * @param tabla the tabla
+	 */
 	public static void complexfillJTable(String sentencia, Integer columnas, DefaultTableModel tabla) {
 		Connection c;
 
@@ -206,6 +291,14 @@ public class UtilidadesDB {
 		}
 	}
 
+	/**
+	 * Complexfill J table.
+	 *
+	 * @param sentencia the sentencia
+	 * @param columnas the columnas
+	 * @param tabla the tabla
+	 * @param columnaFecha the columna fecha
+	 */
 	public static void complexfillJTable(String sentencia, Integer columnas, DefaultTableModel tabla,
 			Integer columnaFecha) {
 
@@ -244,6 +337,12 @@ public class UtilidadesDB {
 	}
 
 	// Para hacerlo más sencillo La sentencia debe devolver un solo String con los
+	/**
+	 * Complex fill J list.
+	 *
+	 * @param sentencia the sentencia
+	 * @param lista the lista
+	 */
 	// datos colocados de la manera adecuada.
 	public static void complexFillJList(String sentencia, DefaultListModel<String> lista) {
 
@@ -260,6 +359,12 @@ public class UtilidadesDB {
 		}
 	}
 	
+	/**
+	 * Genera informe.
+	 *
+	 * @param nombreInforme the nombre informe
+	 * @param parametros the parametros
+	 */
 	public static void generaInforme(String nombreInforme, HashMap<String, Object> parametros) {
 		try {
 			// Compilar el informe generando fichero jasper
@@ -273,7 +378,7 @@ public class UtilidadesDB {
 			Class.forName("com.mysql.jdbc.Driver");
 			String servidor = "jdbc:mysql://localhost:3306/di4db?useSSL=false";
 			String usuarioDB = "root";
-			String passwordDB = "Studium2019;";
+			String passwordDB = "Studium2018;";
 			Connection conexion = DriverManager.getConnection(servidor, usuarioDB, passwordDB);
 
 			// Completar el informe con los datos de la base de datos
@@ -288,7 +393,6 @@ public class UtilidadesDB {
 
 		} catch (Exception exc) {
 			exc.printStackTrace();
-			// System.out.println("Error: " + exc.toString());
 		}
 	}
 }

@@ -17,10 +17,30 @@ import javax.swing.table.DefaultTableModel;
 import es.studium.Modelo.UtilidadesDB;
 import es.studium.Ticket.Vista.Vista1AltaTicket;
 
+/**
+ * La clase Controlador1AltaTicket.
+ * 
+ * <p>
+ * Esta clase controladora maneja y da funcionalidad a un objeto de la clase
+ * {@link Vista1AltaTicket} y sus componentes.
+ * </p>
+ * 
+ * @author José Manuel Platero
+ */
 public class Controlador1AltaTicket implements ActionListener, MouseListener {
 
+	/**
+	 * El objeto {@link Vista1AltaTicket v1AltTic} es un atributo del
+	 * Controlador1AltaTicket mediante el cual podrá acceder a los elementos de la
+	 * vista.
+	 */
 	Vista1AltaTicket v1AltTic;
 
+	/**
+	 * Instancia un nuevo objeto Controlador1AltaTicket, que a su vez instancia
+	 * una nueva {@link Vista1AltaTicket}, la hace visible y le añade los
+	 * listeners correspondientes..
+	 */
 	public Controlador1AltaTicket() {
 
 		v1AltTic = new Vista1AltaTicket();
@@ -45,6 +65,14 @@ public class Controlador1AltaTicket implements ActionListener, MouseListener {
 		v1AltTic.getTxtFiltNom().addMouseListener(this);
 	}
 
+	/**
+	 * El método actionPerformed de esta clase, que otorga la funcionalidad a los
+	 * diferentes elementos del objeto {@link #v1AltTic}.
+	 *
+	 * @param e El {@link ActionEvent} que indica la acción que tuvo lugar, usado
+	 *          para identificar el elemento de {@link #v1AltTic} que lanzó la
+	 *          acción.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -242,12 +270,22 @@ public class Controlador1AltaTicket implements ActionListener, MouseListener {
 		}
 	}
 
+	/**
+	 * Mouse clicked.
+	 *
+	 * @param e el {@link MouseEvent}
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * Mouse pressed.
+	 *
+	 * @param e el {@link MouseEvent} usado para identificar qué elemento recibió el evento.
+	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
 
@@ -266,18 +304,33 @@ public class Controlador1AltaTicket implements ActionListener, MouseListener {
 		}
 	}
 
+	/**
+	 * Mouse released.
+	 *
+	 * @param e el {@link MouseEvent}
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * Mouse entered.
+	 *
+	 * @param e el {@link MouseEvent}
+	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * Mouse exited.
+	 *
+	 * @param e el {@link MouseEvent}
+	 */
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub

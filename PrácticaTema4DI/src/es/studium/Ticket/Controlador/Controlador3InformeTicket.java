@@ -7,10 +7,30 @@ import java.util.HashMap;
 import es.studium.Modelo.UtilidadesDB;
 import es.studium.Ticket.Vista.Vista3InformeTicket;
 
+/**
+ * La clase Controlador3InformeTicket.
+ * 
+ * <p>
+ * Esta clase controladora maneja y da funcionalidad a un objeto de la clase
+ * {@link Vista3InformeTicket} y sus componentes.
+ * </p>
+ * 
+ * @author José Manuel Platero
+ */
 public class Controlador3InformeTicket implements ActionListener {
 
+	/**
+	 * El objeto {@link Vista3InformeTicket v3InfTick} es un atributo del
+	 * Controlador3InformeTicket mediante el cual podrá acceder a los elementos de la
+	 * vista.
+	 */
 	Vista3InformeTicket v3InfTick;
 
+	/**
+	 * Instancia un nuevo objeto Controlador3InformeTicket, que a su vez instancia
+	 * una nueva {@link Vista3InformeTicket}, la hace visible y le añade los
+	 * listeners correspondientes..
+	 */
 	public Controlador3InformeTicket() {
 
 		v3InfTick = new Vista3InformeTicket();
@@ -20,6 +40,14 @@ public class Controlador3InformeTicket implements ActionListener {
 
 	}
 
+	/**
+	 * El método actionPerformed de esta clase, que otorga la funcionalidad a los
+	 * diferentes elementos del objeto {@link #v3InfTick}.
+	 *
+	 * @param e El {@link ActionEvent} que indica la acción que tuvo lugar, usado
+	 *          para identificar el elemento de {@link #v3InfTick} que lanzó la
+	 *          acción.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 

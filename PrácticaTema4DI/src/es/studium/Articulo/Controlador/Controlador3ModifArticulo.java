@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -18,13 +19,41 @@ import javax.swing.event.ListSelectionListener;
 import es.studium.Articulo.Vista.Vista3ModifArticulo;
 import es.studium.Modelo.UtilidadesDB;
 
+/**
+ * La clase Controlador3ModifArticulo.
+ * 
+ * <p>
+ * Esta clase controladora maneja y da funcionalidad a un objeto de la clase
+ * {@link Vista3ModifArticulo} y sus componentes.
+ * </p>
+ * 
+ * @author José Manuel Platero
+ */
 public class Controlador3ModifArticulo implements ActionListener, ListSelectionListener, MouseListener {
 
+	/**
+	 * El objeto {@link Vista3ModifArticulo v3ModArt} es un atributo del
+	 * Controlador3ModifArticulo mediante el cual podrá acceder a los elementos de la
+	 * vista.
+	 */
 	Vista3ModifArticulo v3ModArt;
+	
+	/** Un boolean usado para mostrar el mensaje de error. */
 	boolean errorMsg = false;
+	
+	/** Un boolean usado para mostrar un mensaje para repetir el proceso.*/
 	boolean repiteMsg = false;
+	
+	/**
+	 * Un boolean usado para mostrar un mensaje de seguridad al realizar una baja.
+	 */
 	boolean seguroMsg = false;
 
+	/**
+	 * Instancia un nuevo objeto Controlador3ModifArticulo, que a su vez instancia
+	 * una nueva {@link Vista3ModifArticulo}, la hace visible y le añade los
+	 * listeners correspondientes..
+	 */
 	public Controlador3ModifArticulo() {
 
 		v3ModArt = new Vista3ModifArticulo();
@@ -52,6 +81,14 @@ public class Controlador3ModifArticulo implements ActionListener, ListSelectionL
 		v3ModArt.getTxtFiltStock().addMouseListener(this);
 	}
 
+	/**
+	 * El método actionPerformed de esta clase, que otorga la funcionalidad a los
+	 * diferentes elementos del objeto {@link #v3ModArt}.
+	 *
+	 * @param e El {@link ActionEvent} que indica la acción que tuvo lugar, usado
+	 *          para identificar el elemento de {@link #v3ModArt} que lanzó la
+	 *          acción.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -233,8 +270,19 @@ public class Controlador3ModifArticulo implements ActionListener, ListSelectionL
 
 	}
 
+	/**
+	 * El método valueChanged de esta clase, que otorga los comportamientos necesarios al objeto {@link JList} que
+	 * devuelve el método {@link Vista3ModifArticulo#getLstArt() getListArt()
+	 * aplicado sobre {@link #v3ModArt}.
+	 *
+	 * @param e El {@link ListSelectionEvent} que indica la acción que tuvo lugar sobre la lista.
+	 */
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
+
+		if (v3ModArt.getBtnActivCampos().getText().equals("Desactivar campos")) {
+			v3ModArt.getBtnActivCampos().doClick();
+		}
 
 		String idArt = v3ModArt.getLstArt().getSelectedValue().split(" - ")[0];
 		String sentencia = "SELECT nombreArticulo, precioArticulo, stockArticulo, descripcionArticulo FROM articulos WHERE idArticulo = '"
@@ -261,11 +309,21 @@ public class Controlador3ModifArticulo implements ActionListener, ListSelectionL
 
 	}
 
+	/**
+	 * Mouse clicked.
+	 *
+	 * @param e el {@link MouseEvent}
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 
 	}
 
+	/**
+	 * Mouse pressed.
+	 *
+	 * @param e el {@link MouseEvent} usado para identificar qué elemento recibió el evento.
+	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
 
@@ -296,18 +354,33 @@ public class Controlador3ModifArticulo implements ActionListener, ListSelectionL
 		}
 	}
 
+	/**
+	 * Mouse released.
+	 *
+	 * @param e el {@link MouseEvent}
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * Mouse entered.
+	 *
+	 * @param e el {@link MouseEvent}
+	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	/**
+	 * Mouse exited.
+	 *
+	 * @param e el {@link MouseEvent}
+	 */
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub

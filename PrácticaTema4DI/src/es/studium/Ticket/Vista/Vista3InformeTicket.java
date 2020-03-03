@@ -9,14 +9,30 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Vista3InformeTicket.
+ */
 public class Vista3InformeTicket extends JFrame {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The txt fecha min. */
 	private JTextField txtFechaMin;
+	
+	/** The txt fecha max. */
 	private JTextField txtFechaMax;
+	
+	/** The btn crear informe. */
 	private JButton btnCrearInforme;
 
+	/**
+	 * Instantiates a new vista 3 informe ticket.
+	 */
 	public Vista3InformeTicket() {
 		setTitle("Indica el rango");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,14 +60,29 @@ public class Vista3InformeTicket extends JFrame {
 		contentPane.add(btnCrearInforme);
 	}
 
+	/**
+	 * Gets the txt fecha min.
+	 *
+	 * @return the txt fecha min
+	 */
 	public JTextField getTxtFechaMin() {
 		return txtFechaMin;
 	}
 
+	/**
+	 * Gets the txt fecha max.
+	 *
+	 * @return the txt fecha max
+	 */
 	public JTextField getTxtFechaMax() {
 		return txtFechaMax;
 	}
 
+	/**
+	 * Gets the btn crear informe.
+	 *
+	 * @return the btn crear informe
+	 */
 	public JButton getBtnCrearInforme() {
 		return btnCrearInforme;
 	}

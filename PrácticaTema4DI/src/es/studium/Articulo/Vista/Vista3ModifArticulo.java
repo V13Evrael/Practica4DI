@@ -21,28 +21,72 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Vista3ModifArticulo.
+ */
 public class Vista3ModifArticulo extends JFrame {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The txt filt nom. */
 	private JTextField txtFiltNom;
+	
+	/** The txt filt ID. */
 	private JTextField txtFiltID;
+	
+	/** The txt filt precio. */
 	private JTextField txtFiltPrecio;
+	
+	/** The txt filt stock. */
 	private JTextField txtFiltStock;
+	
+	/** The txt F nombre art. */
 	private JTextField txtFNombreArt;
+	
+	/** The txt F precio art. */
 	private JTextField txtFPrecioArt;
+	
+	/** The txt F stock art. */
 	private JTextField txtFStockArt;
+	
+	/** The btn filt ID. */
 	private JButton btnFiltID;
+	
+	/** The btn filt nom. */
 	private JButton btnFiltNom;
+	
+	/** The btn reset filt. */
 	private JButton btnResetFilt;
+	
+	/** The btn filt precio. */
 	private JButton btnFiltPrecio;
+	
+	/** The btn filt stock. */
 	private JButton btnFiltStock;
+	
+	/** The btn modif art. */
 	private JButton btnModifArt;
+	
+	/** The btn modif salir. */
 	private JButton btnModifSalir;
+	
+	/** The lst art. */
 	private JList<String> lstArt;
+	
+	/** The btn activ campos. */
 	private JButton btnActivCampos;
+	
+	/** The txt A desc art. */
 	private JTextArea txtADescArt;
 
+	/**
+	 * Instantiates a new vista 3 modif articulo.
+	 */
 	public Vista3ModifArticulo() {
 		setTitle("Modificaci\u00F3n Art\u00EDculo");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -216,70 +260,155 @@ public class Vista3ModifArticulo extends JFrame {
 		pnlSur2.add(btnModifSalir);
 	}
 
+	/**
+	 * Gets the txt A desc art.
+	 *
+	 * @return the txt A desc art
+	 */
 	public JTextArea getTxtADescArt() {
 		return txtADescArt;
 	}
 
+	/**
+	 * Gets the lst art.
+	 *
+	 * @return the lst art
+	 */
 	public JList<String> getLstArt() {
 		return lstArt;
 	}
 
+	/**
+	 * Gets the btn activ campos.
+	 *
+	 * @return the btn activ campos
+	 */
 	public JButton getBtnActivCampos() {
 		return btnActivCampos;
 	}
 
+	/**
+	 * Gets the txt filt nom.
+	 *
+	 * @return the txt filt nom
+	 */
 	public JTextField getTxtFiltNom() {
 		return txtFiltNom;
 	}
 
+	/**
+	 * Gets the txt filt ID.
+	 *
+	 * @return the txt filt ID
+	 */
 	public JTextField getTxtFiltID() {
 		return txtFiltID;
 	}
 
+	/**
+	 * Gets the txt filt precio.
+	 *
+	 * @return the txt filt precio
+	 */
 	public JTextField getTxtFiltPrecio() {
 		return txtFiltPrecio;
 	}
 
+	/**
+	 * Gets the txt filt stock.
+	 *
+	 * @return the txt filt stock
+	 */
 	public JTextField getTxtFiltStock() {
 		return txtFiltStock;
 	}
 
+	/**
+	 * Gets the txt F nombre art.
+	 *
+	 * @return the txt F nombre art
+	 */
 	public JTextField getTxtFNombreArt() {
 		return txtFNombreArt;
 	}
 
+	/**
+	 * Gets the txt F precio art.
+	 *
+	 * @return the txt F precio art
+	 */
 	public JTextField getTxtFPrecioArt() {
 		return txtFPrecioArt;
 	}
 
+	/**
+	 * Gets the txt F stock art.
+	 *
+	 * @return the txt F stock art
+	 */
 	public JTextField getTxtFStockArt() {
 		return txtFStockArt;
 	}
 
+	/**
+	 * Gets the btn filt ID.
+	 *
+	 * @return the btn filt ID
+	 */
 	public JButton getBtnFiltID() {
 		return btnFiltID;
 	}
 
+	/**
+	 * Gets the btn filt nom.
+	 *
+	 * @return the btn filt nom
+	 */
 	public JButton getBtnFiltNom() {
 		return btnFiltNom;
 	}
 
+	/**
+	 * Gets the btn reset filt.
+	 *
+	 * @return the btn reset filt
+	 */
 	public JButton getBtnResetFilt() {
 		return btnResetFilt;
 	}
 
+	/**
+	 * Gets the btn filt precio.
+	 *
+	 * @return the btn filt precio
+	 */
 	public JButton getBtnFiltPrecio() {
 		return btnFiltPrecio;
 	}
 
+	/**
+	 * Gets the btn filt stock.
+	 *
+	 * @return the btn filt stock
+	 */
 	public JButton getBtnFiltStock() {
 		return btnFiltStock;
 	}
 
+	/**
+	 * Gets the btn modif art.
+	 *
+	 * @return the btn modif art
+	 */
 	public JButton getBtnModifArt() {
 		return btnModifArt;
 	}
 
+	/**
+	 * Gets the btn modif salir.
+	 *
+	 * @return the btn modif salir
+	 */
 	public JButton getBtnModifSalir() {
 		return btnModifSalir;
 	}

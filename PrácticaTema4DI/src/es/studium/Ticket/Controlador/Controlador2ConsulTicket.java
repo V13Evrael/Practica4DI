@@ -8,10 +8,30 @@ import javax.swing.table.DefaultTableModel;
 import es.studium.Modelo.UtilidadesDB;
 import es.studium.Ticket.Vista.Vista2ConsultaTicket;
 
+/**
+ * La clase Controlador2ConsulTicket.
+ * 
+ * <p>
+ * Esta clase controladora maneja y da funcionalidad a un objeto de la clase
+ * {@link Vista2ConsultaTicket} y sus componentes.
+ * </p>
+ * 
+ * @author José Manuel Platero
+ */
 public class Controlador2ConsulTicket implements ActionListener {
 
+	/**
+	 * El objeto {@link Vista2ConsultaTicket v2ConTic} es un atributo del
+	 * Controlador2ConsulTicket mediante el cual podrá acceder a los elementos de la
+	 * vista.
+	 */
 	Vista2ConsultaTicket v2ConTic;
 	
+	/**
+	 * Instancia un nuevo objeto Controlador2ConsulTicket, que a su vez instancia
+	 * una nueva {@link Vista2ConsultaTicket}, la hace visible y le añade los
+	 * listeners correspondientes..
+	 */
 	public Controlador2ConsulTicket() {
 		
 		v2ConTic = new Vista2ConsultaTicket();
@@ -24,6 +44,14 @@ public class Controlador2ConsulTicket implements ActionListener {
 		v2ConTic.getBtnMostrar().addActionListener(this);
 	}
 
+	/**
+	 * El método actionPerformed de esta clase, que otorga la funcionalidad a los
+	 * diferentes elementos del objeto {@link #v2ConTic}.
+	 *
+	 * @param e El {@link ActionEvent} que indica la acción que tuvo lugar, usado
+	 *          para identificar el elemento de {@link #v2ConTic} que lanzó la
+	 *          acción.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		

@@ -9,13 +9,38 @@ import javax.swing.JOptionPane;
 import es.studium.Articulo.Vista.Vista1AltaArticulo;
 import es.studium.Modelo.UtilidadesDB;
 
+/**
+ * La clase Controlador1AltaArticulo.
+ * 
+ * <p>
+ * Esta clase controladora maneja y da funcionalidad a un objeto de la clase
+ * {@link Vista1AltaArticulo} y sus componentes.
+ * </p>
+ * 
+ * @author José Manuel Platero
+ */
 public class Controlador1AltaArticulo implements ActionListener {
 
+	/**
+	 * El objeto {@link Vista1AltaArticulo v1AltArt} es un atributo del Controlador1AltaArticulo
+	 * mediante el cual podrá acceder a los elementos de la vista.
+	 */
 	Vista1AltaArticulo v1AltArt;
+	
+	/** Un boolean usado para mostrar el mensaje de error.*/
 	boolean errorMsg = false;
+	
+	/** Un boolean usado para mostrar un mensaje con Datos.*/
 	boolean datosMsg = false;
+	
+	/** Un boolean usado para mostrar una nueva Alta. */
 	boolean otroAltaMsg = false;
 
+	/**
+	 * Instancia un nuevo objeto Controlador1AltaArticulo,  que a su vez instancia una nueva
+	 * {@link Vista1AltaArticulo}, la hace visible y le añade los listeners
+	 * correspondientes..
+	 */
 	public Controlador1AltaArticulo() {
 
 		v1AltArt = new Vista1AltaArticulo();
@@ -27,6 +52,10 @@ public class Controlador1AltaArticulo implements ActionListener {
 
 	}
 
+	/**El método actionPerformed de esta clase, que otorga la funcionalidad a los diferentes elementos del objeto {@link #v1AltArt}.
+	 *
+	 * @param e El {@link ActionEvent} que indica la acción que tuvo lugar, usado para identificar el elemento de {@link #v1AltArt} que lanzó la acción. 
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 

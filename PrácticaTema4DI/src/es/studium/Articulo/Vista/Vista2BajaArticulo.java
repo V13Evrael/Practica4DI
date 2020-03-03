@@ -23,21 +23,51 @@ import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.ListSelectionModel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Vista2BajaArticulo.
+ */
 public class Vista2BajaArticulo extends JFrame {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The txt filt ID. */
 	private JTextField txtFiltID;
+	
+	/** The txt filt nom. */
 	private JTextField txtFiltNom;
+	
+	/** The tbl dato art baj. */
 	private JTable tblDatoArtBaj;
+	
+	/** The btn baja art salir. */
 	private JButton btnBajaArtSalir;
+	
+	/** The btn baja art. */
 	private JButton btnBajaArt;
+	
+	/** The btn filt ID. */
 	private JButton btnFiltID;
+	
+	/** The btn filt nom. */
 	private JButton btnFiltNom;
+	
+	/** The btn reset filt. */
 	private JButton btnResetFilt;
+	
+	/** The lst art. */
 	private JList<String> lstArt;
+	
+	/** The ch box seguro. */
 	private JCheckBox chBoxSeguro;
 
+	/**
+	 * Instantiates a new vista 2 baja articulo.
+	 */
 	public Vista2BajaArticulo() {
 		setTitle("Baja Art\u00EDculo");
 		setResizable(false);
@@ -163,42 +193,92 @@ public class Vista2BajaArticulo extends JFrame {
 		
 	}
 
+	/**
+	 * Gets the lst art.
+	 *
+	 * @return the lst art
+	 */
 	public JList<String> getLstArt() {
 		return lstArt;
 	}
 
+	/**
+	 * Gets the txt filt ID.
+	 *
+	 * @return the txt filt ID
+	 */
 	public JTextField getTxtFiltID() {
 		return txtFiltID;
 	}
 
+	/**
+	 * Gets the txt filt nom.
+	 *
+	 * @return the txt filt nom
+	 */
 	public JTextField getTxtFiltNom() {
 		return txtFiltNom;
 	}
 
+	/**
+	 * Gets the tbl dato art baj.
+	 *
+	 * @return the tbl dato art baj
+	 */
 	public JTable getTblDatoArtBaj() {
 		return tblDatoArtBaj;
 	}
 
+	/**
+	 * Gets the btn baja art salir.
+	 *
+	 * @return the btn baja art salir
+	 */
 	public JButton getBtnBajaArtSalir() {
 		return btnBajaArtSalir;
 	}
 
+	/**
+	 * Gets the btn baja art.
+	 *
+	 * @return the btn baja art
+	 */
 	public JButton getBtnBajaArt() {
 		return btnBajaArt;
 	}
 
+	/**
+	 * Gets the btn filt ID.
+	 *
+	 * @return the btn filt ID
+	 */
 	public JButton getBtnFiltID() {
 		return btnFiltID;
 	}
 
+	/**
+	 * Gets the btn filt nom.
+	 *
+	 * @return the btn filt nom
+	 */
 	public JButton getBtnFiltNom() {
 		return btnFiltNom;
 	}
 
+	/**
+	 * Gets the btn reset filt.
+	 *
+	 * @return the btn reset filt
+	 */
 	public JButton getBtnResetFilt() {
 		return btnResetFilt;
 	}
 	
+	/**
+	 * Gets the ch box seguro.
+	 *
+	 * @return the ch box seguro
+	 */
 	public JCheckBox getChBoxSeguro() {
 		return chBoxSeguro;
 	}

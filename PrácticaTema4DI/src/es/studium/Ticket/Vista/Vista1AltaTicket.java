@@ -25,23 +25,57 @@ import javax.swing.table.DefaultTableModel;
 
 import es.studium.Modelo.UtilidadesDB;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Vista1AltaTicket.
+ */
 public class Vista1AltaTicket extends JFrame {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The tbl dato art baj. */
 	private JTable tblDatoArtBaj;
+	
+	/** The txt filt nom. */
 	private JTextField txtFiltNom;
+	
+	/** The txt filt ID. */
 	private JTextField txtFiltID;
+	
+	/** The txt F cant. */
 	private JTextField txtFCant;
+	
+	/** The txt F total. */
 	private JTextField txtFTotal;
+	
+	/** The lst art. */
 	private JList<String> lstArt;
+	
+	/** The btn filt ID. */
 	private JButton btnFiltID;
+	
+	/** The btn filt nom. */
 	private JButton btnFiltNom;
+	
+	/** The btn agregar A compra. */
 	private JButton btnAgregarACompra;
+	
+	/** The btn reset filt. */
 	private JButton btnResetFilt;
+	
+	/** The btn finalizar compra. */
 	private JButton btnFinalizarCompra;
+	
+	/** The btn eliminar. */
 	private JButton btnEliminar;
 
+	/**
+	 * Instantiates a new vista 1 alta ticket.
+	 */
 	public Vista1AltaTicket() {
 		setTitle("Alta Ticket");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -179,50 +213,110 @@ public class Vista1AltaTicket extends JFrame {
 		panel_4.add(btnFinalizarCompra);
 	}
 
+	/**
+	 * Gets the tbl dato art baj.
+	 *
+	 * @return the tbl dato art baj
+	 */
 	public JTable getTblDatoArtBaj() {
 		return tblDatoArtBaj;
 	}
 
+	/**
+	 * Gets the btn eliminar.
+	 *
+	 * @return the btn eliminar
+	 */
 	public JButton getBtnEliminar() {
 		return btnEliminar;
 	}
 
+	/**
+	 * Gets the txt filt nom.
+	 *
+	 * @return the txt filt nom
+	 */
 	public JTextField getTxtFiltNom() {
 		return txtFiltNom;
 	}
 
+	/**
+	 * Gets the txt filt ID.
+	 *
+	 * @return the txt filt ID
+	 */
 	public JTextField getTxtFiltID() {
 		return txtFiltID;
 	}
 
+	/**
+	 * Gets the txt F cant.
+	 *
+	 * @return the txt F cant
+	 */
 	public JTextField getTxtFCant() {
 		return txtFCant;
 	}
 
+	/**
+	 * Gets the txt F total.
+	 *
+	 * @return the txt F total
+	 */
 	public JTextField getTxtFTotal() {
 		return txtFTotal;
 	}
 
+	/**
+	 * Gets the lst art.
+	 *
+	 * @return the lst art
+	 */
 	public JList<String> getLstArt() {
 		return lstArt;
 	}
 
+	/**
+	 * Gets the btn filt ID.
+	 *
+	 * @return the btn filt ID
+	 */
 	public JButton getBtnFiltID() {
 		return btnFiltID;
 	}
 
+	/**
+	 * Gets the btn filt nom.
+	 *
+	 * @return the btn filt nom
+	 */
 	public JButton getBtnFiltNom() {
 		return btnFiltNom;
 	}
 
+	/**
+	 * Gets the btn agregar A compra.
+	 *
+	 * @return the btn agregar A compra
+	 */
 	public JButton getBtnAgregarACompra() {
 		return btnAgregarACompra;
 	}
 
+	/**
+	 * Gets the btn reset filt.
+	 *
+	 * @return the btn reset filt
+	 */
 	public JButton getBtnResetFilt() {
 		return btnResetFilt;
 	}
 
+	/**
+	 * Gets the btn finalizar compra.
+	 *
+	 * @return the btn finalizar compra
+	 */
 	public JButton getBtnFinalizarCompra() {
 		return btnFinalizarCompra;
 	}
