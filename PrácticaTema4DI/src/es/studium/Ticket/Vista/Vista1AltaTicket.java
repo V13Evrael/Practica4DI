@@ -220,7 +220,7 @@ public class Vista1AltaTicket extends JFrame {
 	}
 
 	/**
-	 * Este método devuelve el {@link #table}
+	 * Este método devuelve el {@link #tblDatoArt}
 	 *
 	 * @return el {@link JTable} tblDatoArt
 	 */

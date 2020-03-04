@@ -99,9 +99,9 @@ public class Vista2ConsultaTicketDial extends JDialog {
 	}
 
 	/**
-	 * Este método devuelve el {@link #btnSalir}
+	 * Este método devuelve el {@link #btnVolver}
 	 *
-	 * @return el {@link JButton} btnSalir
+	 * @return el {@link JButton} btnVolver
 	 */
 	public JButton getBtnVolver() {
 		return btnVolver;

@@ -197,7 +197,7 @@ public class Controlador2BajaArticulo implements ActionListener, ListSelectionLi
 
 	/**
 	 * El método valueChanged de esta clase, que otorgalos comportamientos necesarios al objeto {@link JList} que
-	 * devuelve el método {@link Vista2BajaArticulo#getLstArt() getListArt()
+	 * devuelve el método {@link Vista2BajaArticulo#getLstArt() getListArt()}
 	 * aplicado sobre {@link #v2BajArt}.
 	 *
 	 * @param e El {@link ListSelectionEvent} que indica la acción que tuvo lugar sobre la lista.

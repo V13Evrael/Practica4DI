@@ -272,7 +272,7 @@ public class Controlador3ModifArticulo implements ActionListener, ListSelectionL
 
 	/**
 	 * El método valueChanged de esta clase, que otorga los comportamientos necesarios al objeto {@link JList} que
-	 * devuelve el método {@link Vista3ModifArticulo#getLstArt() getListArt()
+	 * devuelve el método {@link Vista3ModifArticulo#getLstArt() getListArt()}
 	 * aplicado sobre {@link #v3ModArt}.
 	 *
 	 * @param e El {@link ListSelectionEvent} que indica la acción que tuvo lugar sobre la lista.
