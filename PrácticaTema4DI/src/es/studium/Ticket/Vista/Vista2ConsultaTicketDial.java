@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -13,33 +14,36 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Vista2ConsultaTicketDial.
+ * La clase Vista2ConsultaTicketDial.
+ * <p>
+ * Esta clase que hereda de {@link JFrame} es la Vista que muestra la ventana de altas de Tickets.
+ * Mediante el controlador, se le otorgan las funcionalidades para que sus
+ * componentes accedan al resto de elementos del programa.
  */
 public class Vista2ConsultaTicketDial extends JDialog {
 
-	/** The Constant serialVersionUID. */
+	/** Esta constante autogenerada es usada internamente. */
 	private static final long serialVersionUID = 1L;
 	
-	/** The content panel. */
+	/** El {@link JPanel} que contiene los demás elementos. */
 	private final JPanel contentPanel = new JPanel();
 	
-	/** The table. */
+	/** La {@link JTable} que se rellenará con los datos del Ticket */
 	private JTable table;
 	
-	/** The text field. */
+	/** El {@link JTextField} usado para ver el precio Total del Ticket.*/
 	private JTextField textField;
 	
-	/** The btn volver. */
+	/** El {@link JButton} usado para salir de la esta vista*/
 	private JButton btnVolver;
 
 	/**
-	 * Instantiates a new vista 2 consulta ticket dial.
+	 * Instancia un objeto Vista2ConsultaTicketDial.
 	 *
-	 * @param id the id
-	 * @param fecha the fecha
-	 * @param total the total
+	 * @param id El ID del Ticket.
+	 * @param fecha la fecha de Alta del Ticket.
+	 * @param total El total de la compra del Ticket.
 	 */
 	public Vista2ConsultaTicketDial(String id, String fecha, String total) {
 		setBounds(100, 100, 550, 300);
@@ -92,18 +96,18 @@ public class Vista2ConsultaTicketDial extends JDialog {
 	}
 
 	/**
-	 * Gets the btn volver.
+	 * Este método devuelve el {@link #btnSalir}
 	 *
-	 * @return the btn volver
+	 * @return el {@link JButton} btnSalir
 	 */
 	public JButton getBtnVolver() {
 		return btnVolver;
 	}
 
 	/**
-	 * Gets the table.
+	 * Este método devuelve el {@link #table}
 	 *
-	 * @return the table
+	 * @return el {@link JTable} table
 	 */
 	public JTable getTable() {
 		return table;

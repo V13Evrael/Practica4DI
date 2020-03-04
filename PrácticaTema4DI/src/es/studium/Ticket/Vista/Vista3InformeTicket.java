@@ -9,29 +9,32 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Vista3InformeTicket.
+ * La clase Vista2ConsultaTicket.
+ * <p>
+ * Esta clase que hereda de {@link JFrame} es la Vista usada para la selección del intervalo de fecha para generar un Informe de los Tickets.
+ * Mediante el controlador, se le otorgan las funcionalidades para que sus
+ * componentes accedan al resto de elementos del programa.
  */
 public class Vista3InformeTicket extends JFrame {
 
-	/** The Constant serialVersionUID. */
+	/** Esta constante autogenerada es usada internamente. */
 	private static final long serialVersionUID = 1L;
 	
-	/** The content pane. */
+	/** El {@link JPanel} que contiene los demás elementos. */
 	private JPanel contentPane;
 	
-	/** The txt fecha min. */
+	/** El {@link JTextField} usado para introducir la fecha mínima de los Tickets del Informe.*/
 	private JTextField txtFechaMin;
 	
-	/** The txt fecha max. */
+	/** El {@link JTextField} usado para introducir la fecha máxima de los Tickets del Informe.*/
 	private JTextField txtFechaMax;
 	
-	/** The btn crear informe. */
+	/** El {@link JButton} usado para crear el Informe de Tickets*/
 	private JButton btnCrearInforme;
 
 	/**
-	 * Instantiates a new vista 3 informe ticket.
+	 * Instancia un objeto Vista3InformeTicket.
 	 */
 	public Vista3InformeTicket() {
 		setTitle("Indica el rango");
@@ -61,27 +64,27 @@ public class Vista3InformeTicket extends JFrame {
 	}
 
 	/**
-	 * Gets the txt fecha min.
+	 * Este método devuelve el {@link #txtFechaMin}
 	 *
-	 * @return the txt fecha min
+	 * @return el {@link JTextField} txtFechaMin
 	 */
 	public JTextField getTxtFechaMin() {
 		return txtFechaMin;
 	}
 
 	/**
-	 * Gets the txt fecha max.
+	 * Este método devuelve el {@link #txtFechaMax}
 	 *
-	 * @return the txt fecha max
+	 * @return el {@link JTextField} txtFechaMax
 	 */
 	public JTextField getTxtFechaMax() {
 		return txtFechaMax;
 	}
 
 	/**
-	 * Gets the btn crear informe.
+	 * Este método devuelve el {@link #btnCrearInforme}
 	 *
-	 * @return the btn crear informe
+	 * @return el {@link JButton} btnCrearInforme
 	 */
 	public JButton getBtnCrearInforme() {
 		return btnCrearInforme;

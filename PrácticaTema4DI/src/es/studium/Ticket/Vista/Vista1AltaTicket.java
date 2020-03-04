@@ -25,7 +25,6 @@ import javax.swing.table.DefaultTableModel;
 
 import es.studium.Modelo.UtilidadesDB;
 
-// TODO: Auto-generated Javadoc
 /**
  * La clase Vista1AltaTicket.
  * <p>
@@ -35,50 +34,50 @@ import es.studium.Modelo.UtilidadesDB;
  */
 public class Vista1AltaTicket extends JFrame {
 
-	/** The Constant serialVersionUID. */
+	/** Esta constante autogenerada es usada internamente. */
 	private static final long serialVersionUID = 1L;
 	
-	/** The content pane. */
+	/** El {@link JPanel} que contiene los demás elementos. */
 	private JPanel contentPane;
 	
-	/** The tbl dato art baj. */
-	private JTable tblDatoArtBaj;
+	/** La {@link JTable} que se rellenará con los Artículos ya añadidos con su datos.*/
+	private JTable tblDatoArt;
 	
-	/** The txt filt nom. */
+	/** El {@link JTextField} usado para introducir el nombre del Artículo como Filtro.*/
 	private JTextField txtFiltNom;
 	
-	/** The txt filt ID. */
+	/** El {@link JTextField} usado para introducir el ID del Artículo como Filtro.*/
 	private JTextField txtFiltID;
 	
-	/** The txt F cant. */
+	/** El {@link JTextField} usado para introducir la cantidad de Artículo para añadir al Ticket.*/
 	private JTextField txtFCant;
 	
-	/** The txt F total. */
+	/** El {@link JTextField} usado para introducir el precio Total del Ticket.*/
 	private JTextField txtFTotal;
 	
-	/** The lst art. */
+	/** El {@link JList} donde se muestran los Artículos para añadir.*/
 	private JList<String> lstArt;
 	
-	/** The btn filt ID. */
+	/** El {@link JButton} usado para aplicar el filtro por ID.*/
 	private JButton btnFiltID;
 	
-	/** The btn filt nom. */
+	/** El {@link JButton} usado para aplicar el filtro por nombre.*/
 	private JButton btnFiltNom;
 	
-	/** The btn agregar A compra. */
+	/** El {@link JButton} usado para añadir el producto seleccionado al Ticket.*/
 	private JButton btnAgregarACompra;
 	
-	/** The btn reset filt. */
+	/** El {@link JButton} usado para resetear los filtros por ID.*/
 	private JButton btnResetFilt;
 	
-	/** The btn finalizar compra. */
+	/** El {@link JButton} usado para dar de alta el Ticket. */
 	private JButton btnFinalizarCompra;
 	
-	/** The btn eliminar. */
+	/** El {@link JButton} usado para eliminar un artículo de la {@link #tblDatoArt}.*/
 	private JButton btnEliminar;
 
 	/**
-	 * Instantiates a new vista 1 alta ticket.
+	 * Instancia un objeto Vista1AltaTicket.
 	 */
 	public Vista1AltaTicket() {
 		setTitle("Alta Ticket");
@@ -175,20 +174,20 @@ public class Vista1AltaTicket extends JFrame {
 		JPanel panel = new JPanel();
 		pnlEste1.add(panel, BorderLayout.CENTER);
 		
-		tblDatoArtBaj = new JTable();
-		tblDatoArtBaj.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		tblDatoArtBaj.setModel(new DefaultTableModel(
+		tblDatoArt = new JTable();
+		tblDatoArt.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		tblDatoArt.setModel(new DefaultTableModel(
 			null,
 			new String[] {
 				"ID", "Art\u00EDculo", "Cantidad", "Precio/Unidad"
 			}
 		));
-		tblDatoArtBaj.getColumnModel().getColumn(0).setPreferredWidth(55);
-		tblDatoArtBaj.getColumnModel().getColumn(1).setPreferredWidth(90);
-		tblDatoArtBaj.getColumnModel().getColumn(2).setPreferredWidth(87);
-		tblDatoArtBaj.getColumnModel().getColumn(3).setPreferredWidth(100);
+		tblDatoArt.getColumnModel().getColumn(0).setPreferredWidth(55);
+		tblDatoArt.getColumnModel().getColumn(1).setPreferredWidth(90);
+		tblDatoArt.getColumnModel().getColumn(2).setPreferredWidth(87);
+		tblDatoArt.getColumnModel().getColumn(3).setPreferredWidth(100);
 		panel.setLayout(new BorderLayout(0, 0));
-		JScrollPane scrollPane_1 = new JScrollPane(tblDatoArtBaj);
+		JScrollPane scrollPane_1 = new JScrollPane(tblDatoArt);
 		panel.add(scrollPane_1, BorderLayout.CENTER);
 		scrollPane_1.setBorder(null);
 		scrollPane_1.setPreferredSize(new Dimension(400, 39));
@@ -218,108 +217,108 @@ public class Vista1AltaTicket extends JFrame {
 	}
 
 	/**
-	 * Gets the tbl dato art baj.
+	 * Este método devuelve el {@link #table}
 	 *
-	 * @return the tbl dato art baj
+	 * @return el {@link JTable} tblDatoArt
 	 */
 	public JTable getTblDatoArtBaj() {
-		return tblDatoArtBaj;
+		return tblDatoArt;
 	}
 
 	/**
-	 * Gets the btn eliminar.
+	 * Este método devuelve el {@link #btnEliminar}
 	 *
-	 * @return the btn eliminar
+	 * @return el {@link JButton} btnEliminar
 	 */
 	public JButton getBtnEliminar() {
 		return btnEliminar;
 	}
 
 	/**
-	 * Gets the txt filt nom.
+	 * Este método devuelve el {@link #txtFiltNom}
 	 *
-	 * @return the txt filt nom
+	 * @return el {@link JTextField} txtFiltNom
 	 */
 	public JTextField getTxtFiltNom() {
 		return txtFiltNom;
 	}
 
 	/**
-	 * Gets the txt filt ID.
+	 * Este método devuelve el {@link #txtFiltID}
 	 *
-	 * @return the txt filt ID
+	 * @return el {@link JTextField} txtFiltID
 	 */
 	public JTextField getTxtFiltID() {
 		return txtFiltID;
 	}
 
 	/**
-	 * Gets the txt F cant.
+	 * Este método devuelve el {@link #txtFCant}
 	 *
-	 * @return the txt F cant
+	 * @return el {@link JTextField} txtFCant
 	 */
 	public JTextField getTxtFCant() {
 		return txtFCant;
 	}
 
 	/**
-	 * Gets the txt F total.
+	 * Este método devuelve el {@link #txtFTotal}
 	 *
-	 * @return the txt F total
+	 * @return el {@link JTextField} txtFTotal
 	 */
 	public JTextField getTxtFTotal() {
 		return txtFTotal;
 	}
 
 	/**
-	 * Gets the lst art.
+	 * Este método devuelve el {@link #lstArt}
 	 *
-	 * @return the lst art
+	 * @return el {@link JList} lstArt
 	 */
 	public JList<String> getLstArt() {
 		return lstArt;
 	}
 
 	/**
-	 * Gets the btn filt ID.
+	 * Este método devuelve el {@link #btnFiltID}
 	 *
-	 * @return the btn filt ID
+	 * @return el {@link JButton} btnFiltID
 	 */
 	public JButton getBtnFiltID() {
 		return btnFiltID;
 	}
 
 	/**
-	 * Gets the btn filt nom.
+	 * Este método devuelve el {@link #btnFiltNom}
 	 *
-	 * @return the btn filt nom
+	 * @return el {@link JButton} btnFiltNom
 	 */
 	public JButton getBtnFiltNom() {
 		return btnFiltNom;
 	}
 
 	/**
-	 * Gets the btn agregar A compra.
+	 * Este método devuelve el {@link #btnAgregarACompra}
 	 *
-	 * @return the btn agregar A compra
+	 * @return el {@link JButton} btnAgregarACompra
 	 */
 	public JButton getBtnAgregarACompra() {
 		return btnAgregarACompra;
 	}
 
 	/**
-	 * Gets the btn reset filt.
+	 * Este método devuelve el {@link #btnResetFilt}
 	 *
-	 * @return the btn reset filt
+	 * @return el {@link JButton} btnResetFilt
 	 */
 	public JButton getBtnResetFilt() {
 		return btnResetFilt;
 	}
-
+	
 	/**
-	 * Gets the btn finalizar compra.
+	 * Este método devuelve el {@link #btnFinalizarCompra}
 	 *
-	 * @return the btn finalizar compra
+	 * @return el {@link JButton} btnFinalizarCompra
 	 */
 	public JButton getBtnFinalizarCompra() {
 		return btnFinalizarCompra;
