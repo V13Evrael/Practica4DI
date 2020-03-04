@@ -13,6 +13,7 @@ import java.util.HashMap;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -23,18 +24,22 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class UtilidadesDB.
+ * La clase UtilidadesDB.
+ * <p>
+ * Esta clase contiene en su interior una serie de métodos que nos las clases Controladoras usarán para otorgar funcionalidad a los elementos de las Vistas.
+ * </p>
+ * 
+ * @author José Manuel Platero
  */
 public class UtilidadesDB {
 
 	/**
-	 * Connect data base.
+	 * Este método conecta con la base de datos.
 	 *
-	 * @return the connection
-	 * @throws ClassNotFoundException the class not found exception
-	 * @throws SQLException the SQL exception
+	 * @return un objeto {@link Connection} con los datos adecuados.
+	 * @throws ClassNotFoundException Una excepción cuando no se encuentra el Driver.
+	 * @throws SQLException Una excepción cuando la conexión no se puede llevar a cabo.
 	 */
 	public static Connection connectDataBase() throws ClassNotFoundException, SQLException {
 
@@ -55,12 +60,12 @@ public class UtilidadesDB {
 
 	// Este método genera un Select a partir de los elementos básicos si se quiere
 	/**
-	 * Generate select.
+	 * Este método genera un Select a partir de los elementos básicos.
 	 *
-	 * @param elements the elements
-	 * @param fromTable the from table
-	 * @param where the where
-	 * @return the string
+	 * @param elements Los elementos que se quieren introducir en el Select.
+	 * @param fromTable la tabla o tablas de las que se quieren coger los elementos. 
+	 * @param where las cláusulas where de la sentencia.
+	 * @return Un {@link String} con la sentencia Select formada.
 	 */
 	// ordenar, debe introducirse a continuación del Where.
 	public static String generateSelect(String elements, String fromTable, String where) {
@@ -70,9 +75,9 @@ public class UtilidadesDB {
 	}
 
 	/**
-	 * Take date.
+	 * Coge la fecha actual del sistema.
 	 *
-	 * @return the string
+	 * @return Un {@link String} con la fecha en formato YYYY/mm/dd.
 	 */
 	// Método para recoger la fecha actual.
 	public static String takeDate() {
@@ -95,36 +100,36 @@ public class UtilidadesDB {
 	}
 
 	/**
-	 * Formato date SQL.
+	 * Cambia el Formato de una fecha de americano a castellano y viceversa.
 	 *
-	 * @param s the s
-	 * @return the string
+	 * @param fecha Un {@link String} con la fecha que se desea cambiar
+	 * @return Un {@link String} con la fecha cambiada.
 	 */
-	public static String formatoDateSQL(String s) {
-		String resultado = s;
+	public static String formatoDateSQL(String fecha) {
+		String resultado = fecha;
 		String[] listaResultado = resultado.split("/");
 		resultado = listaResultado[2] + "/" + listaResultado[1] + "/" + listaResultado[0];
 		return resultado;
 	}
 	
 	/**
-	 * Formato date SQL.
+	 * Cambia el Formato de una fecha de americano a castellano y viceversa.
 	 *
-	 * @param s the s
-	 * @param splitter the splitter
-	 * @return the string
+	 * @param fecha Un {@link String} con la fecha que se desea cambiar.
+	 * @param splitter El caracter que separa el mes, del día y el año.
+	 * @return Un {@link String} conla fecha cambiada.
 	 */
-	public static String formatoDateSQL(String s, String splitter) {
-		String resultado = s;
+	public static String formatoDateSQL(String fecha, String splitter) {
+		String resultado = fecha;
 		String[] listaResultado = resultado.split(splitter);
 		resultado = listaResultado[2] + splitter + listaResultado[1] + splitter + listaResultado[0];
 		return resultado;
 	}
 
 	/**
-	 * Disconnect gestion.
+	 * Desconecta una conexión si no lo está ya.
 	 *
-	 * @param c the c
+	 * @param c La conexión que se desea cerrar.
 	 */
 	// Método para cerrar una conexión.
 	public static void disconnectGestion(Connection c) {
@@ -139,11 +144,11 @@ public class UtilidadesDB {
 	}
 
 	/**
-	 * Execute select.
+	 * Ejecuta una sentencia Select sobre una conexión con una base de datos.
 	 *
-	 * @param sentencia the sentencia
-	 * @param c the c
-	 * @return the result set
+	 * @param sentencia El select que se desea lanzar.
+	 * @param c la conexión sobre la que se quiere lanzar el select.
+	 * @return El resultado de dicho select guardado en un {@link ResultSet}.
 	 */
 	// Método para ejecutar una sentencia Select.
 	public static ResultSet executeSelect(String sentencia, Connection c) {
@@ -160,11 +165,11 @@ public class UtilidadesDB {
 	}
 
 	/**
-	 * Execute IDA.
+	 * Ejecuta una de las operaciones de Insert, Delete y Update
 	 *
-	 * @param sentencia the sentencia
-	 * @param c the c
-	 * @throws SQLException the SQL exception
+	 * @param sentencia La sentencia que se desea lanzar.
+	 * @param c la conexión sobre la que se desea lanzar.
+	 * @throws SQLException Una excepción {@link SQLException} si hay algún error SQL.
 	 */
 	// Método para ejecutar un CUD de CRUD.
 	public static void executeIDA(String sentencia, Connection c) throws SQLException {
@@ -178,12 +183,12 @@ public class UtilidadesDB {
 	}
 
 	/**
-	 * Execute IDA.
+	 * Ejecuta una de las operaciones de Insert, Delete y Update
 	 *
-	 * @param sentencia the sentencia
-	 * @param c the c
-	 * @param cerrarCon the cerrar con
-	 * @throws SQLException the SQL exception
+	 * @param sentencia La sentencia que se desea lanzar.
+	 * @param c la conexión sobre la que se desea lanzar.
+	 * @param cerrarCon un boolean que marca si se quiere cerrar la conexión.
+	 * @throws SQLException Una excepción {@link SQLException} si hay algún error SQL.
 	 */
 	public static void executeIDA(String sentencia, Connection c, boolean cerrarCon) throws SQLException {
 
@@ -202,11 +207,12 @@ public class UtilidadesDB {
 	// resultSet.
 	// En la lista de Integers se indican qué elementos de la sentencia se van a
 	/**
-	 * Fill combo box RS.
+	 * Este método rellena un ComboBox utilizando una sentencia SQL guardada en un
+	 * ResultSet
 	 *
-	 * @param rs the rs
-	 * @param c the c
-	 * @param lista the lista
+	 * @param rs El {@link ResultSet} con los datos.
+	 * @param c El {@link JComboBox} donde se guardarán los datos.
+	 * @param lista Un array de enteros con números de 0 hasta la cantidad de columnas del rs.
 	 */
 	// coger y en qué orden se colocarán.
 	public static void fillComboBoxRS(ResultSet rs, JComboBox<String> c, Integer[] lista) {
@@ -228,13 +234,14 @@ public class UtilidadesDB {
 		}
 	}
 
-	// Este método une varios de los métodos anteriores para hacerlo todo en una
+	// Este método une varios de los métodos anteriores para hacerlo todo en uno
 	/**
-	 * Complex fill CB.
+	 * Este método une varios de los anteriores para hacerlo en una sola instrucción.
+	 * Se usan: {@link #connectDataBase()}, {@link #executeSelect(String, Connection)}, {@link #fillComboBoxRS(ResultSet, JComboBox, Integer[])}, {@link #disconnectGestion(Connection)}.
 	 *
-	 * @param sentencia the sentencia
-	 * @param cmb the cmb
-	 * @param lista the lista
+	 * @param sentencia La sentencia para el método executeSelect.
+	 * @param cmb El {@link JComboBox} para el método fillComboBoxRS.
+	 * @param lista la lista usada en el método fillComboBoxRS.
 	 */
 	// sola línea de código.
 	public static void complexFillCB(String sentencia, JComboBox<String> cmb, Integer[] lista) {
@@ -255,11 +262,11 @@ public class UtilidadesDB {
 	}
 
 	/**
-	 * Complexfill J table.
+	 * Un método para rellenar una {@link JTable} con una sentencia Select.
 	 *
-	 * @param sentencia the sentencia
-	 * @param columnas the columnas
-	 * @param tabla the tabla
+	 * @param sentencia La sentencia Select usada por el método {@link #executeSelect(String, Connection)}
+	 * @param columnas el número de columnas que se quieren coger.
+	 * @param tabla El {@link DefaultTableModel} donde se guardarán los elementos extraídos.
 	 */
 	public static void complexfillJTable(String sentencia, Integer columnas, DefaultTableModel tabla) {
 		Connection c;
@@ -292,12 +299,12 @@ public class UtilidadesDB {
 	}
 
 	/**
-	 * Complexfill J table.
+	 * Un método similar {@link #complexfillJTable(String, Integer, DefaultTableModel)}, pero en el que se indica en qué columna hay una fecha.
 	 *
-	 * @param sentencia the sentencia
-	 * @param columnas the columnas
-	 * @param tabla the tabla
-	 * @param columnaFecha the columna fecha
+	 * @param sentencia La sentencia Select usada por el método {@link #executeSelect(String, Connection)}
+	 * @param columnas el número de columnas que se quieren coger.
+	 * @param tabla El {@link DefaultTableModel} donde se guardarán los elementos extraídos.
+	 * @param columnaFecha la columna donde se encuentra la fecha.
 	 */
 	public static void complexfillJTable(String sentencia, Integer columnas, DefaultTableModel tabla,
 			Integer columnaFecha) {
@@ -338,10 +345,10 @@ public class UtilidadesDB {
 
 	// Para hacerlo más sencillo La sentencia debe devolver un solo String con los
 	/**
-	 * Complex fill J list.
-	 *
-	 * @param sentencia the sentencia
-	 * @param lista the lista
+	 * Un método para rellenar una {@link JList} con una sentencia Select.
+	 * 	 *
+	 * @param sentencia la sentencia Select usada por el método {@link #executeSelect(String, Connection)}.
+	 * @param lista el {@link DefaultListModel} donde se guardarán los elementos que devuelve la sentencia. 
 	 */
 	// datos colocados de la manera adecuada.
 	public static void complexFillJList(String sentencia, DefaultListModel<String> lista) {
@@ -360,10 +367,10 @@ public class UtilidadesDB {
 	}
 	
 	/**
-	 * Genera informe.
+	 * Genera un informe PDF y .jasper en base a un documento .jrxml pasado por parámetro.
 	 *
-	 * @param nombreInforme the nombre informe
-	 * @param parametros the parametros
+	 * @param nombreInforme El nombre del archivo .jrxml (sin la extensión).
+	 * @param parametros un {@link HashMap} con parejas los parámetros que debe recibir el archivo .jrxml (en formato Clave, Valor).
 	 */
 	public static void generaInforme(String nombreInforme, HashMap<String, Object> parametros) {
 		try {
