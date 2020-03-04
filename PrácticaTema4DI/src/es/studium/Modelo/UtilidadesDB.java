@@ -13,7 +13,8 @@ import java.util.HashMap;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import net.sf.jasperreports.engine.JasperCompileManager;
