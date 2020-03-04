@@ -16,19 +16,22 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Vista1AltaArticulo.
+ * La clase Vista1AltaArticulo.
+ * <p>
+ * Esta clase que hereda de {@link JFrame} es la Vista que muestra las altas.
+ * Mediante el controlador, se le otorgan las funcionalidades para que sus
+ * componentes accedan al resto de elementos del programa.
  */
 public class Vista1AltaArticulo extends JFrame {
 
-	/** The Constant serialVersionUID. */
+	/** Esta constante autogenerada es usada internamente. */
 	private static final long serialVersionUID = 1L;
 	
-	/** The content pane. */
+	/** El {@link JPanel} que contiene los demás elementos. */
 	private JPanel contentPane;
 	
-	/** The txt F nombre art. */
+	/**  */
 	private JTextField txtFNombreArt;
 	
 	/** The txt F precio art. */
