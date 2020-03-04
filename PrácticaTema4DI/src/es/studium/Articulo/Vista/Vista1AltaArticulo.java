@@ -19,7 +19,7 @@ import javax.swing.border.LineBorder;
 /**
  * La clase Vista1AltaArticulo.
  * <p>
- * Esta clase que hereda de {@link JFrame} es la Vista que muestra las altas.
+ * Esta clase que hereda de {@link JFrame} es la Vista que muestra la ventana de altas de artículos.
  * Mediante el controlador, se le otorgan las funcionalidades para que sus
  * componentes accedan al resto de elementos del programa.
  */
@@ -31,29 +31,29 @@ public class Vista1AltaArticulo extends JFrame {
 	/** El {@link JPanel} que contiene los demás elementos. */
 	private JPanel contentPane;
 	
-	/**  */
+	/** El {@link JTextField} usado para introducir el nombre del artículo */
 	private JTextField txtFNombreArt;
 	
-	/** The txt F precio art. */
+	/** El {@link JTextField} usado para introducir el precio del artículo */
 	private JTextField txtFPrecioArt;
 	
-	/** The txt F stock art. */
+	/** El {@link JTextField} usado para introducir el stock del artículo */
 	private JTextField txtFStockArt;
 	
-	/** The btn alta art salir. */
+	/** El {@link JButton} usado para salir de la esta vista*/
 	private JButton btnAltaArtSalir;
 	
-	/** The btn limpiar. */
+	/** El {@link JButton} usado para limpar los campos de esta vista*/
 	private JButton btnLimpiar;
 	
-	/** The btn alta art. */
+	/** El {@link JButton} usado para dar de alta el artículo */
 	private JButton btnAltaArt;
 	
-	/** The txt A desc art. */
+	/** El {@link JTextField} usado para introducir la descripción detalla del artículo */
 	private JTextArea txtADescArt;
 
 	/**
-	 * Instantiates a new vista 1 alta articulo.
+	 * Instancia un objeto Vista1AltaArticulo.
 	 */
 	public Vista1AltaArticulo() {
 		setTitle("Alta Art\u00EDculo");
@@ -142,63 +142,63 @@ public class Vista1AltaArticulo extends JFrame {
 	}
 
 	/**
-	 * Gets the txt A desc art.
+	 * Este método devuelve el {@link #txtADescArt}
 	 *
-	 * @return the txt A desc art
+	 * @return el {@link JTextArea} txtADescArt
 	 */
 	public JTextArea getTxtADescArt() {
 		return txtADescArt;
 	}
 
 	/**
-	 * Gets the txt F nombre art.
+	 * Este método devuelve el {@link #txtFNombreArt}
 	 *
-	 * @return the txt F nombre art
+	 * @return el {@link JTextField} txtFNombreArt
 	 */
 	public JTextField getTxtFNombreArt() {
 		return txtFNombreArt;
 	}
 
 	/**
-	 * Gets the txt F precio art.
+	 * Este método devuelve el {@link #txtFPrecioArt}
 	 *
-	 * @return the txt F precio art
+	 * @return el {@link JTextField} txtFPrecioArt
 	 */
 	public JTextField getTxtFPrecioArt() {
 		return txtFPrecioArt;
 	}
 
 	/**
-	 * Gets the txt F stock art.
+	 * Este método devuelve el {@link #txtFStockArt}
 	 *
-	 * @return the txt F stock art
+	 * @return el {@link JTextField} txtFStockArt
 	 */
 	public JTextField getTxtFStockArt() {
 		return txtFStockArt;
 	}
 
 	/**
-	 * Gets the btn alta art salir.
+	 * Este método devuelve el {@link #btnAltaArtSalir}
 	 *
-	 * @return the btn alta art salir
+	 * @return el {@link JButton} btnAltaArtSalir
 	 */
 	public JButton getBtnAltaArtSalir() {
 		return btnAltaArtSalir;
 	}
 
 	/**
-	 * Gets the btn limpiar.
+	 * Este método devuelve el {@link #btnLimpiar}
 	 *
-	 * @return the btn limpiar
+	 * @return el {@link JButton} btnLimpiar
 	 */
 	public JButton getBtnLimpiar() {
 		return btnLimpiar;
 	}
 
 	/**
-	 * Gets the btn alta art.
+	 * Este método devuelve el {@link #btnAltaArt}
 	 *
-	 * @return the btn alta art
+	 * @return el {@link JButton} btnAltaArt
 	 */
 	public JButton getBtnAltaArt() {
 		return btnAltaArt;

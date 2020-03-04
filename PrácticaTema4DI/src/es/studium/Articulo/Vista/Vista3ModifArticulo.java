@@ -21,71 +21,74 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Vista3ModifArticulo.
+ * La clase Vista3ModifArticulo.
+ * <p>
+ * Esta clase que hereda de {@link JFrame} es la Vista que muestra la ventana de modificación de artículos.
+ * Mediante el controlador, se le otorgan las funcionalidades para que sus
+ * componentes accedan al resto de elementos del programa.
  */
 public class Vista3ModifArticulo extends JFrame {
 
-	/** The Constant serialVersionUID. */
+	/** Esta constante autogenerada es usada internamente.*/
 	private static final long serialVersionUID = 1L;
 	
-	/** The content pane. */
+	/** El {@link JPanel} que contiene los demás elementos.*/
 	private JPanel contentPane;
 	
-	/** The txt filt nom. */
+	/** El {@link JTextField} usado para introducir el nombre del artículo como filtro de búsqueda.*/
 	private JTextField txtFiltNom;
 	
-	/** The txt filt ID. */
+	/** El {@link JTextField} usado para introducir el ID del artículo como filtro de búsqueda.*/
 	private JTextField txtFiltID;
 	
-	/** The txt filt precio. */
+	/** El {@link JTextField} usado para introducir el precio del artículo como filtro de búsqueda.*/
 	private JTextField txtFiltPrecio;
 	
-	/** The txt filt stock. */
+	/** El {@link JTextField} usado para introducir el stock del artículo como filtro de búsqueda.*/
 	private JTextField txtFiltStock;
 	
-	/** The txt F nombre art. */
+	/** El {@link JTextField} usado para introducir el nuevo nombre del artículo */
 	private JTextField txtFNombreArt;
 	
-	/** The txt F precio art. */
+	/** El {@link JTextField} usado para introducir el nuevo precio del artículo */
 	private JTextField txtFPrecioArt;
 	
-	/** The txt F stock art. */
+	/** El {@link JTextField} usado para introducir el nuevo stock del artículo */
 	private JTextField txtFStockArt;
 	
-	/** The btn filt ID. */
+	/** El {@link JButton} usado para aplicar el filtro por ID.*/
 	private JButton btnFiltID;
 	
-	/** The btn filt nom. */
+	/** El {@link JButton} usado para aplicar el filtro por nombre.*/
 	private JButton btnFiltNom;
 	
-	/** The btn reset filt. */
+	/** El {@link JButton} usado para resetear el filtro*/
 	private JButton btnResetFilt;
 	
-	/** The btn filt precio. */
+	/** El {@link JButton} usado para aplicar el filtro por precio.*/
 	private JButton btnFiltPrecio;
 	
-	/** The btn filt stock. */
+	/** El {@link JButton} usado para aplicar el filtro por stock.*/
 	private JButton btnFiltStock;
 	
-	/** The btn modif art. */
+	/** El {@link JButton} usado para modificar el elemento seleccionado.*/
 	private JButton btnModifArt;
 	
-	/** The btn modif salir. */
+	/** El {@link JButton} usado para salir de la esta vista.*/
 	private JButton btnModifSalir;
 	
-	/** The lst art. */
+	/** El {@link JList} donde se muestran los Artículos.*/
 	private JList<String> lstArt;
 	
-	/** The btn activ campos. */
+	/** El {@link JButton} usado para activar/Desactivar los campos.*/
 	private JButton btnActivCampos;
 	
-	/** The txt A desc art. */
+	/** El {@link JTextField} usado para introducir la descripción detalla del artículo */
 	private JTextArea txtADescArt;
 
 	/**
-	 * Instantiates a new vista 3 modif articulo.
+	 * Instancia un objeto Vista3ModifArticulo.
 	 */
 	public Vista3ModifArticulo() {
 		setTitle("Modificaci\u00F3n Art\u00EDculo");
@@ -261,153 +264,153 @@ public class Vista3ModifArticulo extends JFrame {
 	}
 
 	/**
-	 * Gets the txt A desc art.
+	 * Este método devuelve el {@link #txtADescArt}
 	 *
-	 * @return the txt A desc art
+	 * @return el {@link JTextArea} txtADescArt
 	 */
 	public JTextArea getTxtADescArt() {
 		return txtADescArt;
 	}
 
 	/**
-	 * Gets the lst art.
+	 * Este método devuelve el {@link #lstArt}
 	 *
-	 * @return the lst art
+	 * @return el {@link JList} lstArt
 	 */
 	public JList<String> getLstArt() {
 		return lstArt;
 	}
 
 	/**
-	 * Gets the btn activ campos.
+	 * Este método devuelve el {@link #btnActivCampos}
 	 *
-	 * @return the btn activ campos
+	 * @return el {@link JButton} btnActivCampos
 	 */
 	public JButton getBtnActivCampos() {
 		return btnActivCampos;
 	}
 
 	/**
-	 * Gets the txt filt nom.
+	 * Este método devuelve el {@link #txtFiltNom}
 	 *
-	 * @return the txt filt nom
+	 * @return el {@link JTextField} txtFiltNom
 	 */
 	public JTextField getTxtFiltNom() {
 		return txtFiltNom;
 	}
 
 	/**
-	 * Gets the txt filt ID.
+	 * Este método devuelve el {@link #txtFiltID}
 	 *
-	 * @return the txt filt ID
+	 * @return el {@link JTextField} txtFiltID
 	 */
 	public JTextField getTxtFiltID() {
 		return txtFiltID;
 	}
 
 	/**
-	 * Gets the txt filt precio.
+	 * Este método devuelve el {@link #txtFiltPrecio}
 	 *
-	 * @return the txt filt precio
+	 * @return el {@link JTextField} txtFiltPrecio
 	 */
 	public JTextField getTxtFiltPrecio() {
 		return txtFiltPrecio;
 	}
 
 	/**
-	 * Gets the txt filt stock.
+	 * Este método devuelve el {@link #txtFiltStock}
 	 *
-	 * @return the txt filt stock
+	 * @return el {@link JTextField} txtFiltStock
 	 */
 	public JTextField getTxtFiltStock() {
 		return txtFiltStock;
 	}
 
 	/**
-	 * Gets the txt F nombre art.
+	 * Este método devuelve el {@link #txtFNombreArt}
 	 *
-	 * @return the txt F nombre art
+	 * @return el {@link JTextField} txtFNombreArt
 	 */
 	public JTextField getTxtFNombreArt() {
 		return txtFNombreArt;
 	}
 
 	/**
-	 * Gets the txt F precio art.
+	 * Este método devuelve el {@link #txtFPrecioArt}
 	 *
-	 * @return the txt F precio art
+	 * @return el {@link JTextField} txtFPrecioArt
 	 */
 	public JTextField getTxtFPrecioArt() {
 		return txtFPrecioArt;
 	}
 
 	/**
-	 * Gets the txt F stock art.
+	 * Este método devuelve el {@link #txtFStockArt}
 	 *
-	 * @return the txt F stock art
+	 * @return el {@link JTextField} txtFStockArt
 	 */
 	public JTextField getTxtFStockArt() {
 		return txtFStockArt;
 	}
 
 	/**
-	 * Gets the btn filt ID.
+	 * Este método devuelve el {@link #btnFiltID}
 	 *
-	 * @return the btn filt ID
+	 * @return el {@link JButton} btnFiltID
 	 */
 	public JButton getBtnFiltID() {
 		return btnFiltID;
 	}
 
 	/**
-	 * Gets the btn filt nom.
+	 * Este método devuelve el {@link #btnFiltNom}
 	 *
-	 * @return the btn filt nom
+	 * @return el {@link JButton} btnFiltNom
 	 */
 	public JButton getBtnFiltNom() {
 		return btnFiltNom;
 	}
 
 	/**
-	 * Gets the btn reset filt.
+	 * Este método devuelve el {@link #btnResetFilt}
 	 *
-	 * @return the btn reset filt
+	 * @return el {@link JButton} btnResetFilt
 	 */
 	public JButton getBtnResetFilt() {
 		return btnResetFilt;
 	}
 
 	/**
-	 * Gets the btn filt precio.
+	 * Este método devuelve el {@link #btnFiltPrecio}
 	 *
-	 * @return the btn filt precio
+	 * @return el {@link JButton} btnFiltPrecio
 	 */
 	public JButton getBtnFiltPrecio() {
 		return btnFiltPrecio;
 	}
 
 	/**
-	 * Gets the btn filt stock.
+	 * Este método devuelve el {@link #btnFiltStock}
 	 *
-	 * @return the btn filt stock
+	 * @return el {@link JButton} btnFiltStock
 	 */
 	public JButton getBtnFiltStock() {
 		return btnFiltStock;
 	}
 
 	/**
-	 * Gets the btn modif art.
+	 * Este método devuelve el {@link #btnModifArt}
 	 *
-	 * @return the btn modif art
+	 * @return el {@link JButton} btnModifArt
 	 */
 	public JButton getBtnModifArt() {
 		return btnModifArt;
 	}
 
 	/**
-	 * Gets the btn modif salir.
+	 * Este método devuelve el {@link #btnModifSalir}
 	 *
-	 * @return the btn modif salir
+	 * @return el {@link JButton} btnModifSalir
 	 */
 	public JButton getBtnModifSalir() {
 		return btnModifSalir;

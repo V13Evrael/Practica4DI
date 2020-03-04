@@ -10,32 +10,32 @@ import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Vista2ConsultaTicket.
+ * La clase Vista2ConsultaTicket.
+ * <p>
+ * Esta clase que hereda de {@link JFrame} es la Vista que muestra una consulta de los Tickets.
+ * Mediante el controlador, se le otorgan las funcionalidades para que sus
+ * componentes accedan al resto de elementos del programa.
  */
 public class Vista2ConsultaTicket extends JFrame {
 
-	/** The Constant serialVersionUID. */
+	/** Esta constante autogenerada es usada internamente. */
 	private static final long serialVersionUID = 1L;
 	
-	/** The content pane. */
+	/** El {@link JPanel} que contiene los demás elementos. */
 	private JPanel contentPane;
 	
-	/** The table. */
+	/** La {@link JTable} que se rellenará con los Tickets */
 	private JTable table;
-	
-	/** The pnl boton salir. */
-	private JPanel pnlBotonSalir;
-	
-	/** The btn salir. */
+		
+	/** El {@link JButton} usado para salir de la esta vista*/
 	private JButton btnSalir;
 	
-	/** The btn mostrar ticket. */
+	/** El {@link JButton} usado para acceder a los detalles del Ticket, abriendo un objeto de la clase {@link Vista2ConsultaTicketDial}*/
 	private JButton btnMostrarTicket;
 
 	/**
-	 * Instantiates a new vista 2 consulta ticket.
+	 * Instancia un objeto Vista2ConsultaTicket.
 	 */
 	public Vista2ConsultaTicket() {
 		setTitle("Consulta Ticket");
@@ -61,7 +61,7 @@ public class Vista2ConsultaTicket extends JFrame {
 	
 		contentPane.add(scrollPane, BorderLayout.CENTER);
 		
-		pnlBotonSalir = new JPanel();
+		JPanel pnlBotonSalir = new JPanel();
 		contentPane.add(pnlBotonSalir, BorderLayout.SOUTH);
 		
 		btnMostrarTicket = new JButton("Mostrar Ticket");
@@ -72,36 +72,27 @@ public class Vista2ConsultaTicket extends JFrame {
 	}
 
 	/**
-	 * Gets the table.
+	 * Este método devuelve el {@link #table}
 	 *
-	 * @return the table
+	 * @return el {@link JTable} table
 	 */
 	public JTable getTable() {
 		return table;
 	}
 
 	/**
-	 * Gets the pnl boton salir.
+	 * Este método devuelve el {@link #btnSalir}
 	 *
-	 * @return the pnl boton salir
-	 */
-	public JPanel getPnlBotonSalir() {
-		return pnlBotonSalir;
-	}
-
-	/**
-	 * Gets the btn salir.
-	 *
-	 * @return the btn salir
+	 * @return el {@link JButton} btnSalir
 	 */
 	public JButton getBtnSalir() {
 		return btnSalir;
 	}
 
 	/**
-	 * Gets the btn mostrar.
+	 * Este método devuelve el {@link #btnMostrarTicket}
 	 *
-	 * @return the btn mostrar
+	 * @return el {@link JButton} btnMostrarTicket
 	 */
 	public JButton getBtnMostrar() {
 		return btnMostrarTicket;

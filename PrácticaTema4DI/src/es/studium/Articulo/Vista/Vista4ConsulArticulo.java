@@ -13,29 +13,29 @@ import es.studium.Modelo.UtilidadesDB;
 
 import javax.swing.JButton;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Vista4ConsulArticulo.
+ * La clase Vista4ConsulArticulo.
+ * <p>
+ * Esta clase que hereda de {@link JFrame} es la Vista que muestra la ventana de consulta de artículos.
+ * Mediante el controlador, se le otorgan las funcionalidades para que sus
+ * componentes accedan al resto de elementos del programa.
  */
 public class Vista4ConsulArticulo extends JFrame {
 
-	/** The Constant serialVersionUID. */
+	/** Esta constante autogenerada es usada internamente.*/
 	private static final long serialVersionUID = 1L;
 	
-	/** The content pane. */
+	/** El {@link JPanel} que contiene los demás elementos.*/
 	private JPanel contentPane;
 	
-	/** The table. */
+	/** La {@link JTable} que se rellenará con los Artículos */
 	private JTable table;
 	
-	/** The pnl boton salir. */
-	private JPanel pnlBotonSalir;
-	
-	/** The btn salir. */
+	/** El {@link JButton} usado para salir de la esta vista*/
 	private JButton btnSalir;
 
 	/**
-	 * Instantiates a new vista 4 consul articulo.
+	 * Instancia un objeto Vista4ConsulArticulo.
 	 */
 	public Vista4ConsulArticulo() {
 		setTitle("Consulta Art\u00EDculos");
@@ -66,7 +66,7 @@ public class Vista4ConsulArticulo extends JFrame {
 	
 		contentPane.add(scrollPane, BorderLayout.CENTER);
 		
-		pnlBotonSalir = new JPanel();
+		JPanel pnlBotonSalir = new JPanel();
 		contentPane.add(pnlBotonSalir, BorderLayout.SOUTH);
 		
 		btnSalir = new JButton("Salir al men\u00FA");
@@ -74,18 +74,18 @@ public class Vista4ConsulArticulo extends JFrame {
 	}
 
 	/**
-	 * Gets the table.
+	 * Este método devuelve el {@link #table}
 	 *
-	 * @return the table
+	 * @return el {@link JTable} table
 	 */
 	public JTable getTable() {
 		return table;
 	}
 
 	/**
-	 * Gets the btn salir.
+	 * Este método devuelve el {@link #btnSalir}
 	 *
-	 * @return the btn salir
+	 * @return el {@link JButton} btnSalir
 	 */
 	public JButton getBtnSalir() {
 		return btnSalir;

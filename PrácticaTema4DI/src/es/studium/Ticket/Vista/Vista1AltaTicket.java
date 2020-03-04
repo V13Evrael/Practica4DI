@@ -27,7 +27,11 @@ import es.studium.Modelo.UtilidadesDB;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Vista1AltaTicket.
+ * La clase Vista1AltaTicket.
+ * <p>
+ * Esta clase que hereda de {@link JFrame} es la Vista que muestra la ventana de altas de Tickets.
+ * Mediante el controlador, se le otorgan las funcionalidades para que sus
+ * componentes accedan al resto de elementos del programa.
  */
 public class Vista1AltaTicket extends JFrame {
 

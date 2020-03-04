@@ -17,56 +17,59 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.ListSelectionModel;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Vista2BajaArticulo.
+ * La clase Vista2BajaArticulo.
+ * <p>
+ * Esta clase que hereda de {@link JFrame} es la Vista que muestra la ventana de baja de artículos.
+ * Mediante el controlador, se le otorgan las funcionalidades para que sus
+ * componentes accedan al resto de elementos del programa.
  */
 public class Vista2BajaArticulo extends JFrame {
 
-	/** The Constant serialVersionUID. */
+	/** Esta constante autogenerada es usada internamente.*/
 	private static final long serialVersionUID = 1L;
 	
-	/** The content pane. */
+	/** El {@link JPanel} que contiene los demás elementos.*/
 	private JPanel contentPane;
 	
-	/** The txt filt ID. */
+	/** El {@link JTextField} usado para introducir el ID del artículo como filtro de búsqueda.*/
 	private JTextField txtFiltID;
 	
-	/** The txt filt nom. */
+	/** El {@link JTextField} usado para introducir el nombre del artículo como filtro de búsqueda.*/
 	private JTextField txtFiltNom;
 	
-	/** The tbl dato art baj. */
+	/** La {@link JTable} usada para mostrar los datos del artículo seleccionado.*/
 	private JTable tblDatoArtBaj;
 	
-	/** The btn baja art salir. */
+	/** El {@link JButton} usado para salir de la esta vista.*/
 	private JButton btnBajaArtSalir;
 	
-	/** The btn baja art. */
+	/** El {@link JButton} usado para dar de baja el elemento seleccionado.*/
 	private JButton btnBajaArt;
 	
-	/** The btn filt ID. */
+	/** El {@link JButton} usado para aplicar el filtro por ID.*/
 	private JButton btnFiltID;
 	
-	/** The btn filt nom. */
+	/** El {@link JButton} usado para aplicar el filtro por nombre.*/
 	private JButton btnFiltNom;
 	
-	/** The btn reset filt. */
+	/** El {@link JButton} usado para resetear el filtro*/
 	private JButton btnResetFilt;
 	
-	/** The lst art. */
+	/** El {@link JList} donde se muestran los Artículos.*/
 	private JList<String> lstArt;
 	
-	/** The ch box seguro. */
+	/** El {@link JCheckBox} usado como mecanismo de seguridad para la baja.*/
 	private JCheckBox chBoxSeguro;
 
 	/**
-	 * Instantiates a new vista 2 baja articulo.
+	 * Instancia un objeto Vista2BajaArticulo.
 	 */
 	public Vista2BajaArticulo() {
 		setTitle("Baja Art\u00EDculo");
@@ -194,90 +197,90 @@ public class Vista2BajaArticulo extends JFrame {
 	}
 
 	/**
-	 * Gets the lst art.
+	 * Este método devuelve el {@link #lstArt}
 	 *
-	 * @return the lst art
+	 * @return el {@link JList} lstArt
 	 */
 	public JList<String> getLstArt() {
 		return lstArt;
 	}
 
 	/**
-	 * Gets the txt filt ID.
+	 * Este método devuelve el {@link #txtFiltID}
 	 *
-	 * @return the txt filt ID
+	 * @return el {@link JTextField} txtFiltID
 	 */
 	public JTextField getTxtFiltID() {
 		return txtFiltID;
 	}
 
 	/**
-	 * Gets the txt filt nom.
+	 * Este método devuelve el {@link #txtFiltNom}
 	 *
-	 * @return the txt filt nom
+	 * @return el {@link JTextField} txtFiltNom
 	 */
 	public JTextField getTxtFiltNom() {
 		return txtFiltNom;
 	}
 
 	/**
-	 * Gets the tbl dato art baj.
+	 * Este método devuelve el {@link #tblDatoArtBaj}
 	 *
-	 * @return the tbl dato art baj
+	 * @return el {@link JTable} tblDatoArtBaj
 	 */
 	public JTable getTblDatoArtBaj() {
 		return tblDatoArtBaj;
 	}
 
 	/**
-	 * Gets the btn baja art salir.
+	 * Este método devuelve el {@link #btnBajaArtSalir}
 	 *
-	 * @return the btn baja art salir
+	 * @return el {@link JButton} btnBajaArtSalir
 	 */
 	public JButton getBtnBajaArtSalir() {
 		return btnBajaArtSalir;
 	}
 
 	/**
-	 * Gets the btn baja art.
+	 * Este método devuelve el {@link #btnBajaArt}
 	 *
-	 * @return the btn baja art
+	 * @return el {@link JButton} btnBajaArt
 	 */
 	public JButton getBtnBajaArt() {
 		return btnBajaArt;
 	}
 
 	/**
-	 * Gets the btn filt ID.
+	 * Este método devuelve el {@link #btnFiltID}
 	 *
-	 * @return the btn filt ID
+	 * @return el {@link JButton} btnFiltID
 	 */
 	public JButton getBtnFiltID() {
 		return btnFiltID;
 	}
 
 	/**
-	 * Gets the btn filt nom.
+	 * Este método devuelve el {@link #btnFiltNom}
 	 *
-	 * @return the btn filt nom
+	 * @return el {@link JButton} btnFiltNom
 	 */
 	public JButton getBtnFiltNom() {
 		return btnFiltNom;
 	}
 
 	/**
-	 * Gets the btn reset filt.
+	 * Este método devuelve el {@link #btnResetFilt}
 	 *
-	 * @return the btn reset filt
+	 * @return el {@link JButton} btnResetFilt
 	 */
 	public JButton getBtnResetFilt() {
 		return btnResetFilt;
 	}
 	
 	/**
-	 * Gets the ch box seguro.
+	 * Este método devuelve el {@link #chBoxSeguro}
 	 *
-	 * @return the ch box seguro
+	 * @return el {@link JCheckBox} chBoxSeguro
 	 */
 	public JCheckBox getChBoxSeguro() {
 		return chBoxSeguro;
