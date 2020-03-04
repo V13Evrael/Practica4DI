@@ -22,6 +22,9 @@ import javax.swing.border.LineBorder;
  * Esta clase que hereda de {@link JFrame} es la Vista que muestra la ventana de altas de artículos.
  * Mediante el controlador, se le otorgan las funcionalidades para que sus
  * componentes accedan al resto de elementos del programa.
+ * </p>
+ * 
+ * @author José Manuel Platero
  */
 public class Vista1AltaArticulo extends JFrame {
 

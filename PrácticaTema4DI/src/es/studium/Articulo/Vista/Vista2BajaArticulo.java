@@ -29,6 +29,9 @@ import javax.swing.table.DefaultTableModel;
  * Esta clase que hereda de {@link JFrame} es la Vista que muestra la ventana de baja de artículos.
  * Mediante el controlador, se le otorgan las funcionalidades para que sus
  * componentes accedan al resto de elementos del programa.
+ * </p>
+ * 
+ * @author José Manuel Platero
  */
 public class Vista2BajaArticulo extends JFrame {
 

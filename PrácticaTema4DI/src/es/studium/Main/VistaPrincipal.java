@@ -16,6 +16,9 @@ import javax.swing.border.EmptyBorder;
  * Esta clase que hereda de {@link JFrame} es la Vista inicial del programa.
  * Mediante el controlador, se le otorgan las funcionalidades para que sus
  * componentes accedan al resto de elementos del programa.
+ * </p>
+ * 
+ * @author José Manuel Platero
  */
 public class VistaPrincipal extends JFrame {
 

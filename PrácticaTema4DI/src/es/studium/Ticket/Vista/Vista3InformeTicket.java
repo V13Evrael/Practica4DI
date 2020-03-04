@@ -15,6 +15,9 @@ import javax.swing.border.EmptyBorder;
  * Esta clase que hereda de {@link JFrame} es la Vista usada para la selección del intervalo de fecha para generar un Informe de los Tickets.
  * Mediante el controlador, se le otorgan las funcionalidades para que sus
  * componentes accedan al resto de elementos del programa.
+ * </p>
+ * 
+ * @author José Manuel Platero
  */
 public class Vista3InformeTicket extends JFrame {
 

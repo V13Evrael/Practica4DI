@@ -16,6 +16,9 @@ import javax.swing.table.DefaultTableModel;
  * Esta clase que hereda de {@link JFrame} es la Vista que muestra una consulta de los Tickets.
  * Mediante el controlador, se le otorgan las funcionalidades para que sus
  * componentes accedan al resto de elementos del programa.
+ * </p>
+ * 
+ * @author José Manuel Platero
  */
 public class Vista2ConsultaTicket extends JFrame {
 
