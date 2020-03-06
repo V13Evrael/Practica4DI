@@ -47,8 +47,8 @@ public class UtilidadesDB {
 		Connection resultado = null;
 		String driver = "com.mysql.jdbc.Driver";
 		String url = "jdbc:mysql://localhost:3306/di4db? autoReconnect=true&useSSL=false";
-		String loginBD = "root";
-		String passwordBD = "Studium2018;";
+		String loginBD = "remotoTiendita";
+		String passwordBD = "Studium2019;";
 
 		// Cargar el Driver
 		Class.forName(driver);
@@ -385,8 +385,8 @@ public class UtilidadesDB {
 			// Conectar a la base de datos para sacar la información
 			Class.forName("com.mysql.jdbc.Driver");
 			String servidor = "jdbc:mysql://localhost:3306/di4db?useSSL=false";
-			String usuarioDB = "root";
-			String passwordDB = "Studium2018;";
+			String usuarioDB = "remotoTiendita";
+			String passwordDB = "Studium2019;";
 			Connection conexion = DriverManager.getConnection(servidor, usuarioDB, passwordDB);
 
 			// Completar el informe con los datos de la base de datos
